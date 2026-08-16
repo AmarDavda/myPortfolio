@@ -263,7 +263,7 @@
 ========================================= */
 .developer-section {
   margin-top: auto;
-  padding-top: 0px;
+  padding-top: 18px;
 }
 
 /* =========================================
@@ -631,6 +631,10 @@
       transform var(--transition);
   }
 
+  .developer-section {
+    margin-top: 10px;
+    padding-top: 0;
+  }
   /* -----------------------------------------
      COLLAPSED MOBILE SIDEBAR
   ----------------------------------------- */
