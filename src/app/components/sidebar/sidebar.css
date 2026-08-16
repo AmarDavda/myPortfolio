@@ -635,9 +635,9 @@
       transform var(--transition);
   }
 
-  /* .developer-section {
-    margin-top: 30px;
-  } */
+  .developer-section {
+    margin-top: 100px;
+  }
   /* -----------------------------------------
      COLLAPSED MOBILE SIDEBAR
   ----------------------------------------- */
