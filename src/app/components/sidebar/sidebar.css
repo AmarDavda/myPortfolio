@@ -1,0 +1,970 @@
+/* =========================================
+   SIDEBAR THEME
+========================================= */
+:host {
+  /* -----------------------------------------
+       COLORS
+    ----------------------------------------- */
+  --sidebar-bg: #080a0e;
+  --sidebar-bg-secondary: #0c0f14;
+  --sidebar-card: #10151c;
+  --border-color: #1d2632;
+  --border-hover: #304054;
+  --text-primary: #f8fafc;
+  --text-secondary: #d0d7e2;
+  --text-muted: #7d8999;
+  /* Blue */
+  --accent: #60a5fa;
+  --accent-light: #93c5fd;
+  --accent-dark: #3b82f6;
+  --active-bg: rgba(59, 130, 246, 0.11);
+  --hover-bg: rgba(255, 255, 255, 0.045);
+  /* -----------------------------------------
+       DIMENSIONS
+    ----------------------------------------- */
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 82px;
+  /* -----------------------------------------
+       ANIMATION
+    ----------------------------------------- */
+  --transition: 0.3s ease;
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 26px 17px 16px;
+  background:
+    linear-gradient(180deg,
+      #080a0e 0%,
+      #090c11 55%,
+      #07090c 100%);
+  border-right: 1px solid var(--border-color);
+  z-index: 1000;
+  overflow: hidden;
+  transition:
+    width var(--transition),
+    transform var(--transition),
+    padding var(--transition);
+}
+
+/* =========================================
+   SUBTLE BLUE ATMOSPHERIC GLOW
+========================================= */
+.sidebar::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: -140px;
+  width: 330px;
+  height: 330px;
+  background: rgba(59, 130, 246, 0.055);
+  filter: blur(85px);
+  pointer-events: none;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+.profile-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4px 8px 24px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+/* =========================================
+   PROFILE PHOTO
+========================================= */
+.profile-photo-wrapper {
+  width: 78px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 50%;
+  background:
+    linear-gradient(145deg,
+      var(--accent),
+      #172033 65%,
+      #0b0e13);
+  box-shadow:
+    0 0 0 5px rgba(96, 165, 250, 0.035),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.profile-photo-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 5px rgba(96, 165, 250, 0.06),
+    0 0 25px rgba(59, 130, 246, 0.18);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #090c11;
+}
+
+/* =========================================
+   PROFILE INFORMATION
+========================================= */
+.profile-info {
+  margin-top: 13px;
+  min-width: 0;
+  white-space: nowrap;
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.profile-info h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.profile-info p {
+  margin: 5px 0 0;
+  color: var(--accent-light);
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+/* =========================================
+   NAV ITEM
+========================================= */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 47px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  overflow: hidden;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+/* =========================================
+   ACTIVE INDICATOR
+========================================= */
+.nav-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 0;
+  border-radius: 0 4px 4px 0;
+  background: var(--accent);
+  transform: translateY(-50%);
+  transition: height var(--transition);
+}
+
+.nav-item:hover {
+  color: var(--text-primary);
+  background: var(--hover-bg);
+  transform: translateX(3px);
+}
+
+.nav-item.active {
+  color: var(--accent-light);
+  background: var(--active-bg);
+}
+
+.nav-item.active::before {
+  height: 24px;
+}
+
+/* =========================================
+   NAV ICON
+========================================= */
+.nav-icon {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  object-fit: contain;
+  opacity: 0.65;
+  transition:
+    opacity var(--transition),
+    transform var(--transition),
+    filter var(--transition);
+}
+
+/*
+   If your SVG icons are already blue/white,
+   this keeps them untouched.
+*/
+.nav-item:hover .nav-icon,
+.nav-item.active .nav-icon {
+  opacity: 1;
+}
+
+.nav-item:hover .nav-icon {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   NAV TEXT
+========================================= */
+.nav-text {
+  white-space: nowrap;
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+/* =========================================
+   DEVELOPER STATUS
+========================================= */
+.developer-section {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 7px 10px;
+  color: var(--text-muted);
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
+  white-space: nowrap;
+}
+
+.label-line {
+  width: 18px;
+  height: 1px;
+  background: var(--border-color);
+}
+
+/* =========================================
+   STATUS CARD
+========================================= */
+.status-card {
+  padding: 13px;
+  background: var(--sidebar-card);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    background var(--transition);
+}
+
+.status-card:hover {
+  border-color: var(--border-hover);
+  background: #111720;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   STATUS HEADER
+========================================= */
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow:
+    0 0 0 4px rgba(96, 165, 250, 0.08);
+  animation: pulse 2s infinite;
+}
+
+.status-title {
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================
+   STATUS CONTENT
+========================================= */
+.status-content {
+  margin-top: 11px;
+}
+
+.status-label {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.project-name {
+  margin: 4px 0 9px;
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+.tech-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.tech-tags span {
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: #161c25;
+  border: 1px solid #222c39;
+  color: var(--text-muted);
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-size: 8px;
+}
+
+/* =========================================
+   SIDEBAR BOTTOM
+========================================= */
+.sidebar-bottom {
+  flex-shrink: 0;
+  padding-top: 16px;
+}
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+.social-section {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 11px;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  background: transparent;
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    transform var(--transition);
+}
+
+.social-link img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  opacity: 0.65;
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.social-link:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+  background: var(--active-bg);
+  transform: translateY(-3px);
+}
+
+.social-link:hover img {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* =========================================
+   RESUME BUTTON
+========================================= */
+.resume-btn {
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(96, 165, 250, 0.32);
+  border-radius: 7px;
+  background: rgba(59, 130, 246, 0.075);
+  color: var(--accent-light);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.resume-btn:hover {
+  background: rgba(59, 130, 246, 0.14);
+  border-color: rgba(96, 165, 250, 0.58);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   EXTERNAL COLLAPSE BUTTON
+========================================= */
+.collapse-btn {
+  position: fixed;
+  top: 92px;
+  left: var(--sidebar-width);
+  width: 27px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 7px 7px 0;
+  background: #0d1117;
+  color: var(--text-secondary);
+  cursor: pointer;
+  z-index: 1001;
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  transition:
+    left var(--transition),
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.collapse-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.collapse-btn:hover {
+  color: var(--accent-light);
+  background: #111823;
+  border-color: var(--border-hover);
+}
+
+.collapse-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/*
+   Move collapse button when sidebar
+   becomes collapsed.
+*/
+.sidebar.collapsed~.collapse-btn {
+  left: var(--sidebar-collapsed-width);
+}
+
+/* =========================================
+   COLLAPSED SIDEBAR
+========================================= */
+.sidebar.collapsed {
+  width: var(--sidebar-collapsed-width);
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+/* -----------------------------------------
+   Profile
+----------------------------------------- */
+.sidebar.collapsed .profile-section {
+  padding-left: 0;
+  padding-right: 0;
+  justify-content: center;
+}
+
+.sidebar.collapsed .profile-photo-wrapper {
+  width: 48px;
+  height: 48px;
+}
+
+/* -----------------------------------------
+   Hide profile text
+----------------------------------------- */
+.sidebar.collapsed .profile-info,
+.sidebar.collapsed .nav-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transform: translateX(-8px);
+  pointer-events: none;
+}
+
+/* -----------------------------------------
+   Navigation
+----------------------------------------- */
+.sidebar.collapsed .nav-item {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar.collapsed .nav-item:hover {
+  transform: none;
+}
+
+/* -----------------------------------------
+   Developer status
+----------------------------------------- */
+.sidebar.collapsed .developer-section {
+  display: none;
+}
+
+/* -----------------------------------------
+   Social
+----------------------------------------- */
+.sidebar.collapsed .social-section {
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar.collapsed .social-link {
+  width: 38px;
+}
+
+/* -----------------------------------------
+   Resume
+----------------------------------------- */
+.sidebar.collapsed .resume-btn {
+  width: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 0px;
+}
+
+
+/* =========================================
+   PULSE ANIMATION
+========================================= */
+@keyframes pulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(96, 165, 250, 0.35);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 7px rgba(96, 165, 250, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(96, 165, 250, 0);
+  }
+}
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+/* .mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  width: 43px;
+  height: 43px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: #090c11;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow:
+    0 6px 22px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-btn span {
+  width: 19px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-primary);
+  transition: transform 0.25s ease;
+} */
+
+/* =========================================
+   MOBILE OVERLAY
+========================================= */
+/* .sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(3px);
+  z-index: 900;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.sidebar-overlay.show {
+  opacity: 1;
+} */
+
+/* =========================================
+   MOBILE
+========================================= */
+/* @media (max-width: 768px) { */
+
+  /* -----------------------------------------
+       Mobile menu
+    ----------------------------------------- */
+  /* .mobile-menu-btn {
+    display: flex;
+  } */
+
+  /* -----------------------------------------
+     Sidebar
+  ----------------------------------------- */
+  /* .sidebar {
+    width: 280px;
+    transform: translateX(-100%);
+    box-shadow:
+      15px 0 45px rgba(0, 0, 0, 0.45);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  } */
+
+  /* -----------------------------------------
+     Overlay
+  ----------------------------------------- */
+  /* .sidebar-overlay {
+    display: block;
+    pointer-events: none;
+  }
+
+  .sidebar-overlay.show {
+    pointer-events: auto;
+  } */
+
+  /* -----------------------------------------
+     Disable desktop collapse on mobile
+  ----------------------------------------- */
+  /* .sidebar.collapsed {
+    width: 280px;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .sidebar.collapsed .profile-section {
+    justify-content: center;
+  }
+
+  .sidebar.collapsed .profile-photo-wrapper {
+    width: 78px;
+    height: 78px;
+  }
+
+  .sidebar.collapsed .profile-info,
+  .sidebar.collapsed .nav-text {
+    opacity: 1;
+    width: auto;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .sidebar.collapsed .nav-item {
+    justify-content: flex-start;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sidebar.collapsed .developer-section {
+    display: block;
+  }
+
+  .sidebar.collapsed .social-section {
+    flex-direction: row;
+    align-items: initial;
+  }
+
+  .sidebar.collapsed .resume-btn {
+    width: 100%;
+  } */
+
+  /* -----------------------------------------
+     Hide desktop collapse button on mobile
+  ----------------------------------------- */
+  /* .collapse-btn {
+    display: none;
+  }
+} */
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+/* @media (max-width: 400px) {
+  .sidebar {
+    width: 260px;
+  }
+} */
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  /*
+   * On mobile, collapsed means:
+   * completely hide the sidebar.
+   *
+   * The collapse button remains visible.
+   */
+
+  .sidebar {
+
+    width: var(--sidebar-width);
+
+    transform: translateX(0);
+
+    transition:
+      transform var(--transition);
+
+  }
+
+
+  /* -----------------------------------------
+     COLLAPSED MOBILE SIDEBAR
+  ----------------------------------------- */
+
+  .sidebar.collapsed {
+
+    width: var(--sidebar-width);
+
+    padding-left: 17px;
+    padding-right: 17px;
+
+    transform: translateX(-100%);
+
+  }
+
+
+  /* -----------------------------------------
+     DO NOT USE DESKTOP COLLAPSED STYLING
+     
+     On mobile we don't want:
+     - icon-only sidebar
+     - small profile
+     - hidden text inside visible sidebar
+     - vertical social icons
+  ----------------------------------------- */
+
+  .sidebar.collapsed .profile-section {
+
+    padding-left: 8px;
+    padding-right: 8px;
+
+  }
+
+
+  .sidebar.collapsed .profile-photo-wrapper {
+
+    width: 78px;
+    height: 78px;
+
+  }
+
+
+  .sidebar.collapsed .profile-info,
+  .sidebar.collapsed .nav-text {
+
+    opacity: 1;
+
+    width: auto;
+
+    overflow: visible;
+
+    transform: none;
+
+    pointer-events: auto;
+
+  }
+
+
+  .sidebar.collapsed .nav-item {
+
+    justify-content: flex-start;
+
+    padding-left: 14px;
+    padding-right: 14px;
+
+  }
+
+
+  .sidebar.collapsed .developer-section {
+
+    display: block;
+
+  }
+
+
+  .sidebar.collapsed .social-section {
+
+    flex-direction: row;
+
+    align-items: initial;
+
+  }
+
+
+  .sidebar.collapsed .social-link {
+
+    width: 36px;
+
+  }
+
+
+  .sidebar.collapsed .resume-btn {
+
+    width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+
+  }
+
+
+  /* -----------------------------------------
+     COLLAPSE BUTTON
+  ----------------------------------------- */
+
+  .collapse-btn {
+
+    /*
+     * When sidebar is open
+     * button stays attached to its right side.
+     */
+
+    left: var(--sidebar-width);
+
+    top: 70px;
+
+    width: 28px;
+    height: 44px;
+
+    z-index: 1001;
+
+  }
+
+
+  /*
+   * When sidebar is collapsed:
+   *
+   * Sidebar is completely outside
+   * the screen.
+   *
+   * Button moves to the left edge.
+   */
+
+  .sidebar.collapsed ~ .collapse-btn {
+
+    left: 0;
+
+    border-left: 1px solid var(--border-color);
+
+    border-radius: 0 7px 7px 0;
+
+  }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .sidebar {
+
+    width: 270px;
+
+  }
+
+
+  .sidebar.collapsed {
+
+    width: 270px;
+
+  }
+
+
+  .collapse-btn {
+
+    left: 270px;
+
+  }
+
+
+  .sidebar.collapsed ~ .collapse-btn {
+
+    left: 0;
+
+  }
+
+}

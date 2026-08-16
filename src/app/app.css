@@ -1,0 +1,7 @@
+.main-content {
+  min-height: 100vh;
+
+  margin-left: 270px;
+
+  transition: margin-left 0.3s ease;
+}

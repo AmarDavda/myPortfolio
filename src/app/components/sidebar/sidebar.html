@@ -1,0 +1,217 @@
+<!-- Mobile overlay -->
+<!-- <div class="sidebar-overlay" [class.show]="isMobileOpen" (click)="closeMobileSidebar()">
+</div> -->
+
+
+<!-- Mobile menu button -->
+<!-- <button class="mobile-menu-btn" type="button" aria-label="Open navigation" (click)="toggleMobileSidebar()">
+
+  <span></span>
+  <span></span>
+  <span></span>
+
+</button> -->
+
+
+<!-- Sidebar -->
+<aside class="sidebar" [class.collapsed]="isCollapsed" [class.mobile-open]="isMobileOpen">
+
+
+  <!-- ============================= -->
+  <!-- PROFILE -->
+  <!-- ============================= -->
+  <div class="profile-section">
+
+    <div class="profile-photo-wrapper">
+      <img src="/assets/profile/amar.jpg" alt="Amar Davda" class="profile-photo">
+    </div>
+
+    <div class="profile-info">
+
+      <h1>Amar Davda</h1>
+
+      <p>Software Engineer</p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ============================= -->
+  <!-- NAVIGATION -->
+  <!-- ============================= -->
+
+  <nav class="sidebar-nav">
+
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item"
+      (click)="closeMobileSidebar()">
+
+      <img src="assets/icons/home.webp" alt="" class="nav-icon">
+
+      <span class="nav-text">
+        Home
+      </span>
+
+    </a>
+
+    <a routerLink="/about" routerLinkActive="active" class="nav-item" (click)="closeMobileSidebar()">
+
+      <img src="assets/icons/about.webp" alt="" class="nav-icon">
+
+      <span class="nav-text">
+        About
+      </span>
+
+    </a>
+
+
+    <a routerLink="/skill" routerLinkActive="active" class="nav-item" (click)="closeMobileSidebar()">
+
+      <img src="assets/icons/skill.png" alt="" class="nav-icon">
+
+      <span class="nav-text">
+        Skill
+      </span>
+
+    </a>
+
+    <a routerLink="/project" routerLinkActive="active" class="nav-item" (click)="closeMobileSidebar()">
+
+      <img src="assets/icons/project.png" alt="" class="nav-icon">
+
+      <span class="nav-text">
+        Project
+      </span>
+
+    </a>
+
+    <a routerLink="/contact" routerLinkActive="active" class="nav-item" (click)="closeMobileSidebar()">
+
+      <img src="assets/icons/contact.png" alt="" class="nav-icon">
+
+      <span class="nav-text">
+        Contact
+      </span>
+
+    </a>
+
+  </nav>
+
+
+  <!-- ============================= -->
+  <!-- DEVELOPER STATUS -->
+  <!-- ============================= -->
+
+  <div class="developer-section">
+
+    <div class="section-label">
+      <span class="label-line"></span>
+      <span class="nav-text">DEV STATUS</span>
+    </div>
+
+
+    <div class="status-card">
+
+      <div class="status-header">
+
+        <span class="status-dot"></span>
+
+        <span class="status-title nav-text">
+          Available
+        </span>
+
+      </div>
+
+
+      <div class="status-content nav-text">
+
+        <p class="status-label">
+          Currently Working On
+        </p>
+
+        <p class="project-name">
+          Angular Project
+        </p>
+
+        <div class="tech-tags">
+
+          <span>Angular</span>
+          <span>TypeScript</span>
+          <span>Javascript</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ============================= -->
+  <!-- BOTTOM AREA -->
+  <!-- ============================= -->
+
+  <div class="sidebar-bottom">
+
+
+    <!-- Social links -->
+
+    <div class="social-section">
+
+      <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link"
+        aria-label="LinkedIn">
+        <img src="assets/icons/linkedin.webp" alt="" class="nav-icon">
+      </a>
+
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+        <img src="assets/icons/github.webp" alt="" class="nav-icon">
+      </a>
+
+      <a href="mailto:your@email.com" class="social-link" aria-label="Email">
+        <img src="assets/icons/mail.webp" alt="" class="nav-icon">
+      </a>
+
+      <a href="https://whatsapp.com/" target="_blank" rel="noopener noreferrer" class="social-link"
+        aria-label="Whatsapp">
+        <img src="assets/icons/whatsapp.webp" alt="" class="nav-icon">
+      </a>
+
+      <!-- <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link"
+        aria-label="Instagram">
+        <img src="assets/icons/instagram.webp" alt="" class="nav-icon">
+      </a> -->
+
+      <a href="https://google.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Location">
+        <img src="assets/icons/location.webp" alt="" class="nav-icon">
+      </a>
+
+    </div>
+
+
+    <!-- Resume -->
+
+    <a href="assets/resume/Amar-Davda-Resume.pdf" download class="resume-btn">
+
+
+      <img src="assets/icons/download.png" alt="" class="nav-icon">
+
+      <span class="nav-text">
+        Resume
+      </span>
+
+    </a>
+
+  </div>
+
+</aside>
+
+<!-- Sidebar collapse button -->
+
+<button class="collapse-btn" type="button" (click)="toggleSidebar()"
+  [attr.aria-label]="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'">
+
+  <img [src]="isCollapsed ? 'assets/icons/open.png' : 'assets/icons/collapse.png'"
+    [alt]="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'">
+
+</button>
