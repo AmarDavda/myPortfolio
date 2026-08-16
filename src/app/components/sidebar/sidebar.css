@@ -635,14 +635,9 @@
       transform var(--transition);
   }
 
-  .developer-section {
-    margin-top: 20px;
-    padding-top: 0;
-  }
-
-  .status-card {
-  padding: 5px 10px;
-}
+  /* .developer-section {
+    margin-top: 30px;
+  } */
   /* -----------------------------------------
      COLLAPSED MOBILE SIDEBAR
   ----------------------------------------- */
