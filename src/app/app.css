@@ -1,7 +1,88 @@
+/* =========================================
+   GLOBAL PORTFOLIO LAYOUT
+========================================= */
+
+:host {
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 82px;
+  --layout-transition: 0.3s ease;
+
+  display: block;
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.portfolio-layout {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
 .main-content {
+
   min-height: 100vh;
 
-  margin-left: 270px;
+  /*
+   * Sidebar is fixed, therefore main content
+   * needs its own desktop offset.
+   */
 
-  transition: margin-left 0.3s ease;
+  margin-left: var(--sidebar-width);
+
+  width: calc(100% - var(--sidebar-width));
+
+  box-sizing: border-box;
+
+  transition:
+    margin-left var(--layout-transition),
+    width var(--layout-transition);
+
+}
+
+
+/* =========================================
+   COLLAPSED SIDEBAR
+========================================= */
+
+.main-content.sidebar-collapsed {
+
+  margin-left: var(--sidebar-collapsed-width);
+
+  width: calc(100% - var(--sidebar-collapsed-width));
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  /*
+   * IMPORTANT:
+   *
+   * Sidebar does NOT occupy layout space
+   * on mobile.
+   */
+
+  .main-content,
+  .main-content.sidebar-collapsed {
+
+    width: 100%;
+
+    margin-left: 0;
+
+    min-height: 100vh;
+
+  }
+
 }

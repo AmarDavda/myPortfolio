@@ -1,5 +1,22 @@
-<app-sidebar></app-sidebar>
+<!-- <app-sidebar></app-sidebar>
 
 <main class="main-content">
   <router-outlet></router-outlet>
-</main>
+</main> -->
+
+<div class="portfolio-layout">
+
+  <app-sidebar
+    (sidebarToggle)="onSidebarToggle($event)">
+  </app-sidebar>
+
+
+  <main
+    class="main-content"
+    [class.sidebar-collapsed]="isSidebarCollapsed">
+
+    <router-outlet></router-outlet>
+
+  </main>
+
+</div>
