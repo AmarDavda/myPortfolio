@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import {
-  AfterViewInit,
+import { Component, HostListener, OnDestroy, OnInit, AfterViewInit,
   ElementRef,
   QueryList,
   ViewChildren
@@ -15,6 +13,8 @@ import {
 })
 export class Home implements OnInit, OnDestroy, AfterViewInit {
 
+
+  
   showBackToTop = false;
 
 
@@ -31,7 +31,6 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
     this.observeSections();
 
   }
-
 
   /* =========================================
      SECTION OBSERVER
