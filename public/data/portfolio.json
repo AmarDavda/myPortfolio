@@ -1,0 +1,310 @@
+{
+  "hero": {
+    "name": "Amar Davda",
+    "title": "Software Engineering Student",
+    "city": "Jasdan, Gujarat",
+    "shortSummery": "I’m a software developer who loves solving problems with logic and maths, and enjoys learning new technologies and passionate about music, mythology, and the beauty of nature.",
+    "profileImage": "assets/profile/profile.jpg",
+    "logo": "assets/logo/logo.png"
+  },
+  "about": {
+    "profileImage2": "assets/profile/profile2.jpg",
+    "professionalSummary": "I am a passionate IT engineering student with a strong interest in software development and technology. I enjoy learning new things, solving problems, and improving my technical skills. I am looking for opportunities where I can apply what I have learned, gain real-world experience, and grow as a developer. With a positive mindset and a commitment to continuous learning, I hope to contribute my ideas and efforts in a professional environment while building a strong career in the field of technology.",
+    "resume": "assets/resume/myResume.pdf"
+  },
+  "about2": {
+    "aboutImage": "assets/profile/profile2.jpg",
+    "summary": "I am someone who believes in constant growth, curiosity, and making life meaningful through learning and experience. I enjoy understanding how things work, asking questions, and finding better ways to solve problems, not just in studies, but in everyday life. For me, growth is not just about success, but about becoming a better thinker, a better creator, and a better human being with each step I take. I want to build a life where I can keep exploring new ideas, expressing creativity, and contributing something valuable to the world around me. I am driven by a positive mindset, a willingness to learn from every situation, and a desire to turn my efforts into something impactful. My goal is not only to achieve personal success, but also to create, inspire, and leave behind something meaningful through my journey.",
+    "whyWorkWithMe": "I am a self-motivated and positive individual who genuinely enjoys solving problems and continuously improving myself. I approach every task with dedication and a mindset to give my 100%, whether working independently or as part of a team. I learn new things quickly and adapt well to challenges, which helps me grow and stay consistent in my work. Along with this, I have good communication skills and enjoy guiding and collaborating with others, creating a supportive and productive environment. I believe in putting in honest effort and staying committed to my goals. With this mindset, I aim not only to grow personally but also to contribute meaningfully and add value to the organization I work with."
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Information Technology (B.Tech IT)",
+      "institution": "Marwadi University, Rajkot",
+      "duration": "2022 - 2026",
+      "institutionLogo": "assets/education/mulogo.jpg",
+      "resultImage": "assets/education/mu.jpg"
+    },
+    {
+      "degree": "Higher Secondary Certification (12th)",
+      "institution": "SOS: The School of Science, Eng. Med. School, Rajkot",
+      "duration": "2020 - 2022",
+      "institutionLogo": "assets/education/soslogo.jpg",
+      "resultImage": "assets/education/hsc.jpg"
+    },
+    {
+      "degree": "Secondary School Certification (10th)",
+      "institution": "Saint Hari Eng. Med. School, Jasdan",
+      "duration": "2007 - 2020",
+      "institutionLogo": "assets/education/stharilogo.jpg",
+      "resultImage": "assets/education/ssc.jpg"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CPA: Programming Essentials in C++",
+      "source": "Cisco",
+      "image": "assets/certificates/cpp.jpg"
+    },
+    {
+      "name": "Java Programming",
+      "source": "Oracle",
+      "image": "assets/certificates/java.jpg"
+    },
+    {
+      "name": "Python 101 for Data Science",
+      "source": "IBM",
+      "image": "assets/certificates/python.jpg"
+    },
+    {
+      "name": "Database Programming with SQL",
+      "source": "Oracle",
+      "image": "assets/certificates/sql.jpg"
+    }
+  ],
+  "additionalInfo": {
+    "dob": "17th January, 2005",
+    "native": "Jasdan(360050), Gujarat, India",
+    "citizenship": "Indian",
+    "maritalStatus": "Not Married",
+    "languages": {
+      "title": "Multilingual Communication",
+      "intro": "Communication is key, and I excel in it with fluency in below languages:",
+      "items": [
+        {
+          "language": "Gujarati",
+          "Proficiency": "Native",
+          "logo": "assets/skills/guj.png"
+        },
+        {
+          "language": "English",
+          "Proficiency": "Proficient",
+          "logo": "assets/skills/eng.jpg"
+        },
+        {
+          "language": "Hindi",
+          "Proficiency": "Proficient",
+          "logo": "assets/skills/hindi.png"
+        }
+      ]
+    },
+    "interestAreas": {
+      "title": "Interest Areas",
+      "intro": "Beyond technology, I enjoy activities that promote creativity, mental well-being, and continuous personal growth.",
+      "items": [
+        {
+          "title": "Music",
+          "logo": "assets/skills/music.jpg"
+        },
+        {
+          "title": "Reading",
+          "logo": "assets/skills/read.jpg"
+        },
+        {
+          "title": "Mathematics",
+          "logo": "assets/skills/maths.png"
+        },
+        {
+          "title": "Sketching",
+          "logo": "assets/skills/sketch.jpg"
+        },
+        {
+          "title": "Fiction Writing",
+          "logo": "assets/skills/writing.jpg"
+        },
+        {
+          "title": "Explore Mythologies",
+          "logo": "assets/skills/myth.jpg"
+        },
+        {
+          "title": "Gardening",
+          "logo": "assets/skills/garden.png"
+        }
+      ]
+    }
+  },
+  "skills": {
+    "intro": "As a Technical Learner, I have dived into range of skills, from Core Programming to Running Technologies.",
+    "categories": [
+      {
+        "title": "Programming Language",
+        "items": [
+          {"name": "C", "level": 75, "logo": "assets/skills/c.png"},
+          {"name": "C++", "level": 70, "logo": "assets/skills/cpp.png"},
+          {"name": "Java", "level": 80, "logo": "assets/skills/java.png"},
+          {"name": "Python", "level": 75, "logo": "assets/skills/python.png"},
+          {"name": "C Sharp", "level": 70, "logo": "assets/skills/cs.png"},
+          {"name": "PHP", "level": 75, "logo": "assets/skills/php.png"},
+          {"name": "SQL", "level": 80, "logo": "assets/skills/sql.png"}
+        ]
+      },
+      {
+        "title": "Web Development",
+        "items": [
+          {"name": "HTML", "level": 90, "logo": "assets/skills/html.png"},
+          {"name": "CSS", "level": 85, "logo": "assets/skills/css.png"},
+          {"name": "JavaScript", "level": 75, "logo": "assets/skills/js.png"},
+          {"name": "React JS", "level": 90, "logo": "assets/skills/react.png"},
+          {"name": "Node JS", "level": 85, "logo": "assets/skills/node.png"},
+          {"name": "Express JS", "level": 75, "logo": "assets/skills/express.png"},
+          {"name": "Bootstrap", "level": 80, "logo": "assets/skills/boot.png"},
+          {"name": "Tailwind CSS", "level": 80, "logo": "assets/skills/tail.png"}
+        ]
+      },
+      {
+        "title": "Database Programming",
+        "items": [
+          {"name": "MySQL", "level": 80, "logo": "assets/skills/mysql.png"},
+          {"name": "MongoDB", "level": 80, "logo": "assets/skills/mongo.png"},
+          {"name": "PostgreSQL", "level": 70, "logo": "assets/skills/postgre.png"}
+        ]
+      },
+      {
+        "title": "Mobile App Development",
+        "items": [
+          {"name": "Kotlin", "level": 75, "logo": "assets/skills/kotlin.png"},
+          {"name": "Dart", "level": 70, "logo": "assets/skills/dart.png"},
+          {"name": "Flutter", "level": 70, "logo": "assets/skills/flutter.png"}
+        ]
+      },
+      {
+        "title": "Soft Skills",
+        "items": [
+          {"name": "Problem Solving", "logo": "assets/skills/problem2.png"},
+          {"name": "Teamwork", "logo": "assets/skills/team.png"},
+          {"name": "Communication", "logo": "assets/skills/communication.png"},
+          {"name": "Presentation", "logo": "assets/skills/presentation.png"},
+          {"name": "Time Management", "logo": "assets/skills/time.png"}
+        ]
+      },
+      {
+        "title": "Other Tools",
+        "items": [
+          {
+            "name": "VS Code",
+            "level": 85,
+            "logo": "assets/skills/vs.png"
+          },
+          {
+            "name": "AndroidStudio",
+            "level": 80,
+            "logo": "assets/skills/as.png"
+          },
+          {
+            "name": "Git",
+            "level": 70,
+            "logo": "assets/skills/git.png"
+          },
+          {
+            "name": "GitHub",
+            "level": 75,
+            "logo": "assets/skills/github.png"
+          },
+          {
+            "name": "MS Tools",
+            "level": 75,
+            "logo": "assets/skills/micro.jpg"
+          },
+          {
+            "name": "ChatGPT",
+            "level": 80,
+            "logo": "assets/skills/chat.png"
+          }
+        ]
+      }
+    ]
+  },
+  "experience": [
+    {
+      "role": "Web Developer Intern",
+      "company": "BrainyBeam technologies, Ahmedabad",
+      "duration": "May 2025 - June 2025",
+      "description": [
+        "I have learned the ReactJS concepts.",
+        "I have created a web page using ReactJS, and used Axios for API requesting. The web page was related to hospital and maintaining the patient records."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Result History - A Web Application",
+      "description": "Developed a mini web-based result management system with a user-friendly landing page and input form. Students can enter their unique identifiers (such as Enrollment Number or GR Number) to instantly view their particular subject’s marks or results.",
+      "tech": [
+        "HTML",
+        "Javascript",
+        "Bootstrap",
+        "CDNJS"
+      ],
+      "duration": "In 5th-semester (Aug 2024 - Sept 2024)",
+      "github": "",
+      "demo": ""
+    },
+    {
+      "name": "E-CommerceApp - An Android Application",
+      "description": "Developed an Android-based e-commerce application featuring multiple interactive screens, including a product listing home page and detailed product view. The app supports core shopping functionalities such as adding items to the cart, direct purchase, cart management, and a purchase history section to track previously bought products.",
+      "tech": [
+        "Kotlin",
+        "XML",
+        "SQLite"
+      ],
+      "duration": "In 6th-semester (Jan 2025 - Feb 2025)",
+      "github": "",
+      "demo": ""
+    },
+    {
+      "name": "Next-Gen. Smart Farming Platform for Proactive Crop Disease Management System",
+      "description": "Developed an AI-powered smart farming application using C# and ASP.NET Core that enables early detection of crop diseases through leaf image analysis. Integrated a machine learning model using ONNX Runtime to classify plant health and generate diagnostic reports. The system also provides treatment recommendations to help farmers take preventive actions.",
+      "tech": [
+        "C#",
+        "ASP.NET Core Web API",
+        "ONNX Runtime"
+      ],
+      "duration": " In 7th-semester (June 2025 - Sept 2025) ",
+      "github": "",
+      "demo": ""
+    },
+    {
+      "name": "AI-Powered Recruitment and Staffing Platform - An Android Application",
+      "description": "This application is an AI-driven recruitment and staffing platform designed for both job eekers and recruiters. It provides secure dual-role login, job recommendations, user can explore and search jobs, esume analysis with ATS scoring and suggest improvement, and NLP-based chatbot. Recruiters can post jobs, manage applications, and review candidates.",
+      "tech": [
+        "Flutter",
+        "Dart",
+        "Python",
+        "Firebase",
+        "FastAPI"
+      ],
+      "duration": "In 8th-semester (Oct 2025 - Feb 2026)",
+      "github": "",
+      "demo": ""
+    }
+  ],
+  "contact": {
+    "title": "Get In Touch",
+    "contactImg": "assets/profile/flower.png",
+    "para1": "Let's Create Eomething Extraordinary.",
+    "para2": "So Let's Work Together to Shape Future, and Transform the Ideas and Thoughts into Reality.",
+    "para3": "Let's Innovate Together!",
+    "item": [
+      {
+        "title": "Address",
+        "content": "Yogi Industries, Nr. Post Office, Station Road, Jasdan - 360050, Dist. Rajkot, Gujarat, India",
+        "logo": "assets/logo/home.png"
+      },
+      {
+        "title": "Email",
+        "content": "amardavda1715@gmail.com",
+        "logo": "assets/logo/email.png"
+      },
+      {
+        "title": "Phone",
+        "content": "+91 8200585066",
+        "logo": "assets/logo/phone.png"
+      },
+      {
+        "title": "Whatsapp",
+        "content": "+91 8200585066",
+        "logo": "assets/logo/whatsapp.png"
+      }
+    ]
+  }
+}
