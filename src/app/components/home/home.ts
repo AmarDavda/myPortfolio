@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnDestroy, OnInit, AfterViewInit,
+import {
+  Component, HostListener, OnDestroy, OnInit, AfterViewInit,
   ElementRef,
   QueryList,
   ViewChildren
@@ -17,6 +18,17 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
 
   // Tracks which section is currently in view, drives the nav underline/highlight
   activeSection = 'home';
+
+  // Hamburger menu state (small mobile only)
+  isMobileNavOpen = false;
+
+  toggleMobileNav(): void {
+    this.isMobileNavOpen = !this.isMobileNavOpen;
+  }
+
+  closeMobileNav(): void {
+    this.isMobileNavOpen = false;
+  }
 
   @ViewChildren('scrollSection')
   sections!: QueryList<ElementRef>;
@@ -55,12 +67,12 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       this.sectionObserver!.observe(section.nativeElement);
     });
   }
-/* =========================================
-     NAV SCROLL-SPY OBSERVER
-     Highlights the nav link matching whichever
-     section currently occupies the middle of
-     the viewport.
-  ========================================= */
+  /* =========================================
+       NAV SCROLL-SPY OBSERVER
+       Highlights the nav link matching whichever
+       section currently occupies the middle of
+       the viewport.
+    ========================================= */
   private observeActiveNavSection(): void {
     this.navObserver = new IntersectionObserver(
       (entries) => {
@@ -147,7 +159,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
 
   private experienceTimer: ReturnType<typeof setInterval> | null = null;
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.updateExperienceSlider();
     this.startExperienceSlider();
   }
