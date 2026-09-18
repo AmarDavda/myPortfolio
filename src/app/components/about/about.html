@@ -1,0 +1,295 @@
+<div class="about-page">
+
+    <!-- =========================================
+     ABOUT PAGE NAVBAR (in-page section anchors)
+======================================== -->
+    <nav class="about-navbar">
+        <div class="about-navbar-inner">
+
+            <!-- Page / brand indicator — links back to Home route -->
+            <a routerLink="/" class="about-brand">
+                <span class="brand-symbol">&lt;/&gt;</span>
+                <span class="brand-text">Amar</span>
+            </a>
+
+            <!-- Section navigation -->
+            <div class="about-nav-links" id="about-nav-links" [class.mobile-open]="isMobileNavOpen">
+                <a href="#me" class="about-nav-link" [class.active]="activeSection === 'me'"
+                    (click)="scrollToSection($event, 'me')">
+                    <span>Me</span>
+                </a>
+                <a href="#education" class="about-nav-link" [class.active]="activeSection === 'education'"
+                    (click)="scrollToSection($event, 'education')">
+                    <span>Education</span>
+                </a>
+                <a href="#certification" class="about-nav-link" [class.active]="activeSection === 'certification'"
+                    (click)="scrollToSection($event, 'certification')">
+                    <span>Certification</span>
+                </a>
+                <a href="#my-info" class="about-nav-link" [class.active]="activeSection === 'my-info'"
+                    (click)="scrollToSection($event, 'my-info')">
+                    <span>My Info</span>
+                </a>
+                <a href="#contact" class="about-nav-link" [class.active]="activeSection === 'contact'"
+                    (click)="scrollToSection($event, 'contact')">
+                    <span>Contact</span>
+                </a>
+            </div>
+
+            <!-- Small status -->
+            <div class="navbar-status">
+                <span class="navbar-status-dot"></span>
+                <span>Available</span>
+            </div>
+
+            <!-- Hamburger toggle (small mobile only, shown via CSS) -->
+            <button type="button" class="nav-hamburger" [class.open]="isMobileNavOpen" (click)="toggleMobileNav()"
+                [attr.aria-expanded]="isMobileNavOpen" aria-controls="about-nav-links"
+                [attr.aria-label]="isMobileNavOpen ? 'Close menu' : 'Open menu'">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- =========================================
+       ME SECTION
+  ========================================= -->
+    <section id="me" class="me-section reveal-section" #revealSection>
+        <div class="me-container">
+
+            <div class="me-visual">
+                <div class="me-image-frame">
+                    <img [src]="meImage" alt="Amar Davda" class="me-image">
+                </div>
+            </div>
+
+            <div class="me-content">
+                <div class="section-label">
+                    <span class="label-line"></span>
+                    <span>WHY WORK WITH ME</span>
+                </div>
+                <h2 class="me-title">Let's build something worth shipping.</h2>
+                <p *ngFor="let para of whyWorkWithMe">{{ para }}</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+       EDUCATION SLIDER
+  ========================================= -->
+    <section id="education" class="education-section reveal-section" #revealSection>
+        <div class="section-heading">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span>EDUCATION</span>
+            </div>
+            <h2>Academic background</h2>
+        </div>
+
+        <div class="edu-slider" (mouseenter)="stopEducationAutoplay()" (mouseleave)="startEducationAutoplay()">
+            <button type="button" class="slider-control prev" (click)="previousEducation()"
+                aria-label="Previous education">←</button>
+
+            <div class="edu-viewport">
+                <div class="edu-track" [style.transform]="educationTrackTransform">
+                    <article class="edu-card" *ngFor="let edu of education; let i = index"
+                        [class.active]="i === activeEducation">
+                        <img [src]="edu.logo" [alt]="edu.institute" class="edu-logo">
+                        <h3>{{ edu.degree }}</h3>
+                        <span class="edu-institute">{{ edu.institute }}</span>
+                        <span class="edu-years">{{ edu.years }}</span>
+                        <button type="button" class="result-btn" (click)="openResult(edu.resultImage)">View
+                            Result</button>
+                    </article>
+                </div>
+            </div>
+
+            <button type="button" class="slider-control next" (click)="nextEducation()"
+                aria-label="Next education">→</button>
+        </div>
+
+        <div class="slider-dots">
+            <button type="button" *ngFor="let edu of education; let i = index" [class.active]="i === activeEducation"
+                (click)="goToEducation(i)" [attr.aria-label]="'Go to education ' + (i + 1)"></button>
+        </div>
+    </section>
+
+    <!-- Result modal (shared by all education cards) -->
+    <div class="result-modal" *ngIf="selectedResultImage" (click)="closeResult()">
+        <div class="result-modal-inner" (click)="$event.stopPropagation()">
+            <button type="button" class="result-close" (click)="closeResult()" aria-label="Close">✕</button>
+            <img [src]="selectedResultImage" alt="Result">
+        </div>
+    </div>
+
+    <!-- =========================================
+       CERTIFICATION SLIDER
+  ========================================= -->
+    <section id="certification" class="certification-section reveal-section" #revealSection>
+        <div class="section-heading">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span>CERTIFICATION</span>
+            </div>
+            <h2>Courses & certificates</h2>
+        </div>
+
+        <div class="cert-slider" (mouseenter)="stopCertificationAutoplay()" (mouseleave)="startCertificationAutoplay()">
+            <button type="button" class="slider-control prev" (click)="previousCertification()"
+                aria-label="Previous certificate">←</button>
+
+            <div class="cert-viewport">
+                <div class="cert-track" [style.transform]="certificationTrackTransform">
+                    <article class="cert-card" *ngFor="let cert of certifications; let i = index"
+                        [class.active]="i === activeCertification">
+                        <img [src]="cert.image" [alt]="cert.title">
+                    </article>
+                </div>
+            </div>
+
+            <button type="button" class="slider-control next" (click)="nextCertification()"
+                aria-label="Next certificate">→</button>
+        </div>
+
+        <div class="slider-dots">
+            <button type="button" *ngFor="let cert of certifications; let i = index"
+                [class.active]="i === activeCertification" (click)="goToCertification(i)"
+                [attr.aria-label]="'Go to certificate ' + (i + 1)"></button>
+        </div>
+    </section>
+
+    <!-- =========================================
+       MY INFO SECTION
+  ========================================= -->
+    <section id="my-info" class="myinfo-section reveal-section" #revealSection>
+        <div class="section-heading">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span>MY INFO</span>
+            </div>
+            <h2>A little more detail</h2>
+        </div>
+
+        <!-- Additional info -->
+        <div class="info-subsection">
+            <h3 class="info-subtitle">Additional Info</h3>
+            <div class="info-grid">
+                <div class="info-card" *ngFor="let item of additionalInfo">
+                    <span class="info-label">{{ item.label }}</span>
+                    <span class="info-value">{{ item.value }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="info-subsection">
+            <h3 class="info-subtitle">Languages</h3>
+            <div class="flip-grid">
+                <div class="flip-card" *ngFor="let lang of languages">
+                    <img [src]="lang.image" [alt]="lang.name">
+                    <div class="flip-overlay">
+                        <span>{{ lang.name }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="info-subsection">
+            <h3 class="info-subtitle">Hobbies</h3>
+            <div class="flip-grid">
+                <div class="flip-card" *ngFor="let hobby of hobbies">
+                    <img [src]="hobby.image" [alt]="hobby.name">
+                    <div class="flip-overlay">
+                        <span>{{ hobby.name }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+       CONTACT / FOOTER (same as home.html footer)
+  ========================================= -->
+    <footer id="contact" class="portfolio-footer reveal-section" #revealSection>
+        <div class="footer-glow"></div>
+        <div class="footer-container">
+
+            <div class="footer-cta">
+                <div class="footer-cta-content">
+                    <div class="footer-label">
+                        <span class="footer-label-line"></span>
+                        <span>LET'S CONNECT</span>
+                    </div>
+                    <h2 class="footer-title">Have an idea? <span>Let's build it.</span></h2>
+                    <p class="footer-description">
+                        Whether you have a project in mind, a question, or simply want to connect,
+                        feel free to reach out. I'm always open to interesting conversations and new opportunities.
+                    </p>
+                </div>
+                <a href="mailto:your@email.com" class="footer-cta-button">
+                    <span>Get In Touch</span>
+                    <span class="footer-cta-arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">
+                        <span class="footer-brand-symbol">&lt;</span>
+                        <span>Amar</span>
+                        <span class="footer-brand-symbol">/&gt;</span>
+                    </div>
+                    <p class="footer-brand-description">
+                        Software engineer focused on building clean, useful and modern digital experiences.
+                    </p>
+                    <div class="footer-status">
+                        <span class="footer-status-dot"></span>
+                        <span>Available for opportunities</span>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <a href="mailto:your@email.com" class="footer-contact-item">
+                        <span class="contact-icon">@</span>
+                        <span><small>Email</small><strong>your@email.com</strong></span>
+                    </a>
+                    <a href="tel:+910000000000" class="footer-contact-item">
+                        <span class="contact-icon">#</span>
+                        <span><small>Phone</small><strong>+91 00000 00000</strong></span>
+                    </a>
+                    <div class="footer-contact-item">
+                        <span class="contact-icon">/</span>
+                        <span><small>Location</small><strong>India</strong></span>
+                    </div>
+                </div>
+
+                <div class="footer-stack">
+                    <h3>Working With</h3>
+                    <div class="footer-tech-list">
+                        <span>Angular</span><span>TypeScript</span><span>JavaScript</span>
+                        <span>HTML</span><span>CSS</span><span>Python</span><span>FastAPI</span><span>Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 <strong>Amar Davda</strong>. All rights reserved.</p>
+                <p class="footer-built">Designed &amp; built with <span>Angular</span><span
+                        class="footer-heart">♥</span></p>
+            </div>
+
+        </div>
+    </footer>
+
+    <button type="button" class="back-to-top" [class.show]="showBackToTop" (click)="scrollToTop()"
+        aria-label="Back to top">↑</button>
+
+</div>
