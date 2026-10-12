@@ -93,32 +93,42 @@
   <!-- ============================= -->
   <div class="sidebar-bottom">
 
-    <!-- Social links -->
+    <!-- Social links (urls come from portfolio.json; empty ones are hidden) -->
     <div class="social-section">
 
-      <a title="LinkedIn" href="https://linkedin.com/in/your-actual-handle" target="_blank" rel="noopener noreferrer"
+      @if (links().linkedin) {
+      <a title="LinkedIn" [href]="links().linkedin" target="_blank" rel="noopener noreferrer"
         class="social-link" aria-label="LinkedIn">
         <img src="assets/icons/linkedin.webp" alt="" class="nav-icon">
       </a>
+      }
 
-      <a title="GitHub" href="https://github.com/your-actual-handle" target="_blank" rel="noopener noreferrer" class="social-link"
+      @if (links().github) {
+      <a title="GitHub" [href]="links().github" target="_blank" rel="noopener noreferrer" class="social-link"
         aria-label="GitHub">
         <img src="assets/icons/github.webp" alt="" class="nav-icon">
       </a>
+      }
 
-      <a title="Email" href="mailto:your@email.com" class="social-link" aria-label="Email">
+      @if (links().email) {
+      <a title="Email" [href]="links().email" class="social-link" aria-label="Email">
         <img src="assets/icons/mail.webp" alt="" class="nav-icon">
       </a>
+      }
 
-      <a title="Whatsapp" href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer" class="social-link"
+      @if (links().whatsapp) {
+      <a title="Whatsapp" [href]="links().whatsapp" target="_blank" rel="noopener noreferrer" class="social-link"
         aria-label="Whatsapp">
         <img src="assets/icons/whatsapp.webp" alt="" class="nav-icon">
       </a>
+      }
 
-      <a title="Location" href="https://maps.google.com/?q=India" target="_blank" rel="noopener noreferrer" class="social-link"
+      @if (links().location) {
+      <a title="Location" [href]="links().location" target="_blank" rel="noopener noreferrer" class="social-link"
         aria-label="Location">
         <img src="assets/icons/location.webp" alt="" class="nav-icon">
       </a>
+      }
 
     </div>
 

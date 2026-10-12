@@ -20,7 +20,6 @@ export class Project extends PageBase {
 
   readonly navLinks: NavLink[] = [
     { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
     { id: 'contact', label: 'Contact' },
   ];
 

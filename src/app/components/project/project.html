@@ -89,30 +89,6 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="section reveal-section" #revealSection>
-  <div class="section-heading">
-    <div class="section-label"><span class="label-line"></span><span>EXPERIENCE</span></div>
-    <h2>Where I've <span>worked</span></h2>
-  </div>
-
-  <div class="timeline">
-    @for (e of d.experience; track e.role) {
-    <article class="card exp-card">
-      <span class="exp-dot"></span>
-      <span class="project-duration">{{ e.duration }}</span>
-      <h3>{{ e.role }}</h3>
-      <p class="exp-company">{{ e.company }}</p>
-      <ul>
-        @for (line of e.description; track line) {
-        <li>{{ line }}</li>
-        }
-      </ul>
-    </article>
-    }
-  </div>
-</section>
-
 <app-footer id="contact" class="reveal-section" #revealSection />
 
 } @else {

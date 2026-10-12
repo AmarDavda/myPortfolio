@@ -1,4 +1,5 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output, computed, inject } from '@angular/core';
+import { PortfolioService } from '../../shared/portfolio.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -11,6 +12,22 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Sidebar implements OnInit {
 
   isCollapsed = false;
+
+  // Social / contact links come from public/data/portfolio.json
+  private readonly data = inject(PortfolioService).data;
+
+  readonly links = computed(() => {
+    const contact = this.data()?.contact;
+    const item = (title: string) => contact?.item.find((i) => i.title === title)?.link ?? '';
+    const social = (name: string) => contact?.socials?.find((s) => s.name === name)?.link ?? '';
+    return {
+      linkedin: social('LinkedIn'),
+      github: social('GitHub'),
+      email: item('Email'),
+      whatsapp: item('Whatsapp'),
+      location: item('Address'),
+    };
+  });
 
   @Output() sidebarToggle = new EventEmitter<boolean>();
 

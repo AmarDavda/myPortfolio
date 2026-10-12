@@ -13,3 +13,11 @@ Social links: fill contact.socials[].link, empty ones are hidden.
 
 If `ng build` warns about component style size, raise "anyComponentStyle" budget in angular.json
 (home.css is already large, so yours is probably raised).
+
+## Round 2 changes
+- Home: experience section now shows the timeline from portfolio.json (project cards slider removed);
+  footer replaced by the shared <app-footer>; resume link fixed to assets/resume/myResume.pdf.
+- Footer "Get In Touch" button now opens the Contact page (/contact) everywhere.
+- Project page: Experience section removed (lives on Home).
+- Sidebar bottom icons read their links from portfolio.json
+  (Email, WhatsApp, Address work now; set contact.socials[GitHub|LinkedIn].link to show those two icons).
