@@ -1,0 +1,35 @@
+<nav class="page-navbar" aria-label="Page sections">
+  <div class="page-navbar-inner">
+
+    <!-- Brand: goes back to the Home route -->
+    <a routerLink="/" class="page-brand" aria-label="Go to home" (click)="open = false">
+      <span class="brand-symbol">&lt;/&gt;</span>
+      <span class="brand-text">Amar</span>
+    </a>
+
+    <!-- Section links (scroll within this page) -->
+    <div class="page-nav-links" id="page-nav-links" [class.mobile-open]="open">
+      <a *ngFor="let link of links; let i = index" class="page-nav-link" [href]="'#' + link.id"
+        [class.active]="isActive(link.id, i)" [attr.aria-current]="isActive(link.id, i) ? 'location' : null"
+        (click)="go($event, link.id)">
+        <span>{{ link.label }}</span>
+      </a>
+    </div>
+
+    <!-- Small status -->
+    <div class="navbar-status">
+      <span class="navbar-status-dot"></span>
+      <span>Available</span>
+    </div>
+
+    <!-- Hamburger (shown <= 768px) -->
+    <button type="button" class="nav-hamburger" [class.open]="open" (click)="open = !open"
+      [attr.aria-expanded]="open" aria-controls="page-nav-links"
+      [attr.aria-label]="open ? 'Close menu' : 'Open menu'">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</nav>

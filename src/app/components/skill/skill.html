@@ -1,0 +1,65 @@
+<app-page-navbar [links]="navLinks" [active]="activeSection" />
+
+@if (data(); as d) {
+
+<!-- OVERVIEW -->
+<section id="overview" class="section overview reveal-section" #revealSection>
+  <div class="section-heading wide">
+    <div class="section-label"><span class="label-line"></span><span>SKILLS</span></div>
+    <h1>What I <span>work with</span></h1>
+    <p>{{ d.skills.intro }}</p>
+  </div>
+
+  <div class="stats">
+    <div class="card stat">
+      <strong>{{ pad(d.skills.categories.length) }}</strong>
+      <small>Skill groups</small>
+    </div>
+    <div class="card stat">
+      <strong>{{ pad(totalSkills()) }}</strong>
+      <small>Technologies &amp; skills</small>
+    </div>
+    <div class="card stat">
+      <strong>{{ pad(d.certifications.length) }}</strong>
+      <small>Certifications</small>
+    </div>
+  </div>
+</section>
+
+<!-- ONE SECTION PER GROUP -->
+@for (c of d.skills.categories; track c.id; let i = $index) {
+<section [id]="c.id" class="section reveal-section" #revealSection>
+  <div class="group-head">
+    <div class="section-heading">
+      <div class="section-label"><span class="label-line"></span><span>{{ pad(i + 1) }} / {{ c.title.toUpperCase() }}</span></div>
+      <h2>{{ c.title }}</h2>
+      <p>{{ c.tagline }}</p>
+    </div>
+    <span class="count">{{ pad(c.items.length) }}</span>
+  </div>
+
+  <div class="hover-grid">
+    @for (s of c.items; track s.name) {
+    <div class="hover-card logo" tabindex="0">
+      <span class="fallback dark">{{ s.name.charAt(0) }}</span>
+      <img [src]="s.logo" [alt]="s.name" class="media" (error)="hideImage($event)">
+      <div class="hover-overlay">
+        <strong>{{ s.name }}</strong>
+        @if (s.level) {
+        <div class="level-bar"><span [style.width.%]="s.level"></span></div>
+        <small>{{ s.level }}%</small>
+        }
+      </div>
+    </div>
+    }
+  </div>
+</section>
+}
+
+<app-footer id="contact" class="reveal-section" #revealSection />
+
+} @else {
+<div class="page-state">{{ failed() ? 'Could not load data/portfolio.json' : 'Loading…' }}</div>
+}
+
+<app-back-to-top />

@@ -1,0 +1,316 @@
+/* =========================================
+   PAGE NAVBAR (same look as the Home navbar)
+   The host is sticky so it stays pinned while
+   the page scrolls.
+========================================= */
+:host {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: block;
+}
+
+.page-navbar {
+    position: relative;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    background: rgba(7, 9, 13, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(14px);
+}
+
+.page-navbar-inner {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 42px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+.page-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.brand-symbol {
+    color: var(--blue);
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.brand-text {
+    letter-spacing: 0.2px;
+}
+
+/* =========================================
+   NAV LINKS
+========================================= */
+.page-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.page-nav-link {
+    position: relative;
+    padding: 24px 0;
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.page-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    width: 0;
+    height: 2px;
+    border-radius: 3px;
+    background: var(--blue);
+    transform: translateX(-50%);
+    transition: width var(--transition);
+}
+
+.page-nav-link:hover {
+    color: var(--white);
+}
+
+.page-nav-link:hover::after,
+.page-nav-link.active::after {
+    width: 20px;
+}
+
+.page-nav-link.active {
+    color: var(--blue-light);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+.navbar-status {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8px;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 0.4px;
+}
+
+.navbar-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.07);
+    animation: navbarPulse 2s infinite;
+}
+
+@keyframes navbarPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.06);
+    }
+
+    50% {
+        box-shadow: 0 0 0 7px rgba(96, 165, 250, 0);
+    }
+}
+
+/* =========================================
+   HAMBURGER (hidden on desktop)
+========================================= */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    margin-left: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nav-hamburger span {
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--text);
+    transition:
+        transform var(--transition),
+        opacity var(--transition),
+        background var(--transition);
+}
+
+.nav-hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background: var(--blue-light);
+}
+
+.nav-hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background: var(--blue-light);
+}
+
+/* =========================================
+   SIDEBAR + CONTENT LEAVES LESS ROOM
+   (status dot is the first thing to go)
+========================================= */
+@media (max-width: 1200px) {
+    .navbar-status {
+        display: none;
+    }
+
+    .page-nav-links {
+        margin-right: 0;
+    }
+}
+
+/* =========================================
+   TABLET
+   many links -> the link row scrolls sideways
+========================================= */
+@media (max-width: 1050px) {
+    .page-navbar-inner {
+        padding: 0 28px;
+    }
+
+    .page-nav-links {
+        gap: 24px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+    }
+
+    .page-nav-links::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* =========================================
+   MOBILE: hamburger + dropdown panel
+========================================= */
+@media (max-width: 768px) {
+    .page-navbar-inner {
+        padding: 0 20px;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+
+    .page-nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin: 0;
+        padding: 0 20px;
+        overflow: hidden;
+        background: rgba(7, 9, 13, 0.97);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(14px);
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            max-height var(--transition),
+            opacity var(--transition),
+            padding var(--transition),
+            visibility var(--transition);
+    }
+
+    .page-nav-links.mobile-open {
+        max-height: 520px;
+        padding: 8px 20px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .page-nav-link {
+        padding: 15px 4px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .page-nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .page-nav-link::after {
+        display: none;
+    }
+
+    .page-nav-link.active {
+        padding-left: 12px;
+        border-left: 2px solid var(--blue);
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+@media (max-width: 480px) {
+    .page-navbar-inner {
+        padding: 0 16px;
+    }
+
+    .page-brand {
+        font-size: 14px;
+    }
+
+    .brand-symbol {
+        font-size: 15px;
+    }
+
+    .page-nav-links {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .page-nav-links.mobile-open {
+        padding: 6px 16px;
+    }
+}

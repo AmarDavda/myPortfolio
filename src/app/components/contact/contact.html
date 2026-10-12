@@ -1,0 +1,88 @@
+<app-page-navbar [links]="navLinks" [active]="activeSection" />
+
+@if (data(); as d) {
+
+<!-- SAY HELLO -->
+<section id="connect" class="section connect reveal-section" #revealSection>
+  <div class="connect-grid">
+
+    <div class="connect-content">
+      <div class="section-label"><span class="label-line"></span><span>{{ d.contact.title.toUpperCase() }}</span></div>
+
+      <h1 class="connect-title">{{ d.contact.para1 }}</h1>
+
+      <p class="connect-thanks">{{ d.contact.thanks }}</p>
+      <p class="connect-text">{{ d.contact.para2 }}</p>
+      <p class="connect-accent">{{ d.contact.para3 }}</p>
+
+      <div class="connect-actions">
+        <a [href]="mailLink()" class="btn primary">
+          <img src="assets/icons/Dark/email.png" alt="" class="icon">
+          <span>Send Email</span>
+        </a>
+        <a [href]="d.contact.resume" download class="btn">
+          <img src="assets/icons/Dark/download.png" alt="" class="icon">
+          <span>Download Resume</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="connect-visual">
+      <div class="connect-frame">
+        <span class="connect-fallback">&lt;/&gt;</span>
+        <img [src]="d.contact.contactImg" [alt]="d.hero.name" (error)="hideImage($event)">
+      </div>
+      <span class="connect-status"><span class="connect-dot"></span>{{ d.footer.status }}</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section id="details" class="section reveal-section" #revealSection>
+  <div class="section-heading">
+    <div class="section-label"><span class="label-line"></span><span>CONTACT DETAILS</span></div>
+    <h2>Reach me <span>directly</span></h2>
+  </div>
+
+  <div class="detail-grid">
+    @for (item of d.contact.item; track item.title) {
+    <div class="card detail-card">
+      <span class="detail-icon"><img [src]="item.logo" alt="" class="icon" (error)="hideImage($event)"></span>
+
+      <div class="detail-text">
+        <small>{{ item.title }}</small>
+        <a [href]="item.link" [attr.target]="item.title === 'Address' || item.title === 'Whatsapp' ? '_blank' : null"
+          rel="noopener">{{ item.content }}</a>
+      </div>
+
+      @if (isCopyable(item.title)) {
+      <button type="button" class="copy-btn" [class.done]="copied() === item.title"
+        (click)="copy(item.title, item.content)" [attr.aria-label]="'Copy ' + item.title">
+        {{ copied() === item.title ? 'Copied ✓' : 'Copy' }}
+      </button>
+      }
+    </div>
+    }
+  </div>
+
+  @if (d.contact.socials) {
+  <div class="socials">
+    @for (s of d.contact.socials; track s.name) {
+    @if (s.link) {
+    <a [href]="s.link" target="_blank" rel="noopener" class="social" [attr.aria-label]="s.name">
+      <img [src]="s.logo" alt="" class="icon"><span>{{ s.name }}</span>
+    </a>
+    }
+    }
+  </div>
+  }
+</section>
+
+<app-footer id="contact" class="reveal-section" #revealSection />
+
+} @else {
+<div class="page-state">{{ failed() ? 'Could not load data/portfolio.json' : 'Loading…' }}</div>
+}
+
+<app-back-to-top />

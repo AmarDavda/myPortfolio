@@ -1,0 +1,501 @@
+/* =========================================
+   SHARED PAGE STYLES  (About / Skill / Project / Contact)
+   Same palette + feel as home.css.
+   Include after theme.css:
+   styleUrls: ['../../shared/theme.css', '../../shared/page.css', './x.css']
+========================================= */
+:host {
+    min-height: 100vh;
+    overflow-x: clip;
+    background:
+        radial-gradient(circle at 75% 6%, rgba(37, 99, 235, 0.055), transparent 30%),
+        var(--bg);
+    color: var(--white);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* the sticky navbar covers the top of a section after a jump */
+section,
+app-footer {
+    scroll-margin-top: calc(var(--nav-height) - 1px);
+}
+
+/* =========================================
+   SECTION SHELL
+========================================= */
+.section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 90px 42px 20px;
+}
+
+.section:last-of-type {
+    padding-bottom: 90px;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    color: var(--blue-light);
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.7px;
+}
+
+.label-line {
+    width: 27px;
+    height: 1px;
+    background: var(--blue);
+}
+
+.section-heading {
+    max-width: 680px;
+    margin-bottom: 34px;
+}
+
+.section-heading h1,
+.section-heading h2 {
+    color: var(--white);
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.4px;
+}
+
+.section-heading h1 span,
+.section-heading h2 span {
+    color: var(--blue-light);
+}
+
+.section-heading p {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   SCROLL REVEAL  (never put position:fixed things inside)
+========================================= */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(36px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.9s ease;
+}
+
+.reveal-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   SLIDER CARDS
+   --slide-width = how wide one card is.
+   Must match perView in the page's .ts
+========================================= */
+.slides-3 {
+    --slide-width: 33.333333%;
+}
+
+.slides-2 {
+    --slide-width: 50%;
+}
+
+.slider-card {
+    flex: 0 0 var(--slide-width);
+    min-width: 0;
+    padding: 0 8px;
+}
+
+@media (max-width: 1050px) {
+    .slides-3 {
+        --slide-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .slides-3,
+    .slides-2 {
+        --slide-width: 100%;
+    }
+}
+
+/* =========================================
+   GENERIC CARD
+========================================= */
+.card {
+    position: relative;
+    height: 100%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: linear-gradient(180deg, #0e141c, var(--card));
+    overflow: hidden;
+    transition:
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(96, 165, 250, 0.35);
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.32);
+    }
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 44px;
+    padding: 0 18px;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: 7px;
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--blue-light);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: rgba(59, 130, 246, 0.16);
+    border-color: rgba(96, 165, 250, 0.6);
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.14);
+}
+
+.btn.primary {
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: #2f74e6;
+    border-color: #4b8cf5;
+}
+
+.btn.small {
+    height: 34px;
+    padding: 0 13px;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.btn.disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* the supplied icons are black: turn them white for the dark theme */
+.icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+}
+
+/* =========================================
+   HOVER-SLIDE CARD
+   photo/logo fills the card, the name slides up on hover.
+   Touch screens have no hover: the name stays visible.
+========================================= */
+.hover-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+}
+
+.hover-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #101720;
+    overflow: hidden;
+    cursor: default;
+    transition:
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.hover-card .fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-light);
+    font-family: monospace;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.hover-card img.media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* logos (skills) sit on a light tile so black logos stay readable */
+.hover-card.logo {
+    background: radial-gradient(circle at 50% 38%, #f4f7fb, #cfd9e6);
+}
+
+.hover-card.logo img.media {
+    inset: auto;
+    left: 12%;
+    top: 9%;
+    width: 76%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.hover-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 30px 12px 11px;
+    background: linear-gradient(180deg, transparent, rgba(5, 8, 12, 0.92) 55%);
+    transform: translateY(101%);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-overlay strong {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.hover-overlay small {
+    color: var(--blue-light);
+    font-family: monospace;
+    font-size: 10px;
+}
+
+.level-bar {
+    height: 3px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.14);
+    overflow: hidden;
+}
+
+.level-bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--blue-dark), var(--blue-light));
+}
+
+@media (hover: hover) {
+
+    .hover-card:hover,
+    .hover-card:focus-visible {
+        transform: translateY(-5px);
+        border-color: rgba(96, 165, 250, 0.4);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+    }
+
+    .hover-card:hover .hover-overlay,
+    .hover-card:focus-visible .hover-overlay {
+        transform: translateY(0);
+    }
+
+    .hover-card:hover img.media {
+        transform: scale(1.06);
+    }
+}
+
+@media (hover: none) {
+    .hover-overlay {
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   TECH / TAG CHIPS
+========================================= */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.chips span {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #0c1118;
+    color: #8a97a8;
+    font-family: monospace;
+    font-size: 10px;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.chips span:hover {
+    color: var(--blue-light);
+    border-color: rgba(96, 165, 250, 0.3);
+    background: #101823;
+}
+
+/* =========================================
+   LOADING / ERROR
+========================================= */
+.page-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 0 20px;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 1050px) {
+    .section {
+        padding: 76px 28px 16px;
+    }
+
+    .section:last-of-type {
+        padding-bottom: 76px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 768px) {
+    .section {
+        padding: 62px 22px 12px;
+    }
+
+    .section:last-of-type {
+        padding-bottom: 62px;
+    }
+
+    .section-heading {
+        margin-bottom: 26px;
+    }
+
+    .hover-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE (480 and below)
+========================================= */
+@media (max-width: 480px) {
+    .section {
+        padding: 52px 16px 8px;
+    }
+
+    .section:last-of-type {
+        padding-bottom: 52px;
+    }
+
+    .section-label {
+        font-size: 11px;
+    }
+
+    .section-heading h1,
+    .section-heading h2 {
+        letter-spacing: -1px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .slider-card {
+        padding: 0 4px;
+    }
+
+    .hover-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .hover-overlay strong {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 11.5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-section,
+    .hover-overlay,
+    .card {
+        transition: none;
+    }
+
+    .reveal-section {
+        opacity: 1;
+        transform: none;
+    }
+}

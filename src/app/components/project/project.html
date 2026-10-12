@@ -1,0 +1,122 @@
+<app-page-navbar [links]="navLinks" [active]="activeSection" />
+
+@if (data(); as d) {
+
+<!-- PROJECTS -->
+<section id="projects" class="section reveal-section" #revealSection>
+  <div class="section-heading wide">
+    <div class="section-label"><span class="label-line"></span><span>PROJECTS</span></div>
+    <h1>Things I've <span>built</span></h1>
+    <p>A selection of academic and personal projects: what each one does, how long it took and the technologies behind it.</p>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter projects by type">
+    @for (c of categories(); track c) {
+    <button type="button" class="filter" [class.active]="filter() === c" [attr.aria-pressed]="filter() === c"
+      (click)="filter.set(c)">{{ c }}</button>
+    }
+  </div>
+
+  <div class="project-grid">
+    @for (p of visible(); track p.name; let i = $index) {
+    <article class="card project-card">
+
+      <!-- photo (falls back to a pattern when no image is set) -->
+      <div class="project-media">
+        <div class="project-fallback">
+          <span class="fallback-code">&lt;/&gt;</span>
+          <span class="fallback-cat">{{ p.category }}</span>
+        </div>
+        @if (p.image) {
+        <img [src]="p.image" [alt]="p.name" (error)="hideImage($event)">
+        }
+        <span class="project-index">{{ pad(i + 1) }}</span>
+        @if (p.category) {
+        <span class="project-badge">{{ p.category }}</span>
+        }
+      </div>
+
+      <div class="project-body">
+        <span class="project-duration">{{ p.duration }}</span>
+        <h3>{{ p.name }}</h3>
+
+        <p class="project-desc" [class.clamped]="!isExpanded(p.name)">{{ p.description }}</p>
+        <button type="button" class="read-more" (click)="toggle(p.name)" [attr.aria-expanded]="isExpanded(p.name)">
+          {{ isExpanded(p.name) ? 'Show less −' : 'Read more +' }}
+        </button>
+
+        <div class="chips">
+          @for (t of p.tech; track t) {
+          <span>{{ t }}</span>
+          }
+        </div>
+
+        <div class="project-actions">
+          @if (p.github) {
+          <a [href]="p.github" target="_blank" rel="noopener" class="btn small">
+            <img src="assets/icons/Dark/github.png" alt="" class="icon"><span>Source</span>
+          </a>
+          } @else {
+          <span class="btn small disabled" title="Not available yet">
+            <img src="assets/icons/Dark/github.png" alt="" class="icon"><span>Source</span>
+          </span>
+          }
+
+          @if (p.demo) {
+          <a [href]="p.demo" target="_blank" rel="noopener" class="btn small">
+            <img src="assets/icons/Dark/link.png" alt="" class="icon"><span>Live</span>
+          </a>
+          } @else {
+          <span class="btn small disabled" title="Not available yet">
+            <img src="assets/icons/Dark/link.png" alt="" class="icon"><span>Live</span>
+          </span>
+          }
+
+          @if (p.pdf) {
+          <a [href]="p.pdf" target="_blank" rel="noopener" class="btn small">
+            <img src="assets/icons/Dark/download.png" alt="" class="icon"><span>PDF</span>
+          </a>
+          } @else {
+          <span class="btn small disabled" title="Not available yet">
+            <img src="assets/icons/Dark/download.png" alt="" class="icon"><span>PDF</span>
+          </span>
+          }
+        </div>
+      </div>
+
+    </article>
+    }
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section reveal-section" #revealSection>
+  <div class="section-heading">
+    <div class="section-label"><span class="label-line"></span><span>EXPERIENCE</span></div>
+    <h2>Where I've <span>worked</span></h2>
+  </div>
+
+  <div class="timeline">
+    @for (e of d.experience; track e.role) {
+    <article class="card exp-card">
+      <span class="exp-dot"></span>
+      <span class="project-duration">{{ e.duration }}</span>
+      <h3>{{ e.role }}</h3>
+      <p class="exp-company">{{ e.company }}</p>
+      <ul>
+        @for (line of e.description; track line) {
+        <li>{{ line }}</li>
+        }
+      </ul>
+    </article>
+    }
+  </div>
+</section>
+
+<app-footer id="contact" class="reveal-section" #revealSection />
+
+} @else {
+<div class="page-state">{{ failed() ? 'Could not load data/portfolio.json' : 'Loading…' }}</div>
+}
+
+<app-back-to-top />

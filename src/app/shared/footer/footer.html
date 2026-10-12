@@ -1,0 +1,76 @@
+@if (footer(); as f) {
+<footer class="portfolio-footer">
+  <div class="footer-glow"></div>
+
+  <div class="footer-container">
+
+    <!-- CTA -->
+    <div class="footer-cta">
+      <div class="footer-cta-content">
+        <div class="footer-label">
+          <span class="footer-label-line"></span>
+          <span>LET'S CONNECT</span>
+        </div>
+        <h2 class="footer-title">
+          {{ f.ctaTitle }}
+          <span>{{ f.ctaAccent }}</span>
+        </h2>
+        <p class="footer-description">{{ f.ctaText }}</p>
+      </div>
+
+      <a [href]="'mailto:' + email" class="footer-cta-button">
+        <span>Get In Touch</span>
+        <span class="footer-cta-arrow">
+          <img src="assets/icons/linkArrow.png" alt="" class="nav-icon">
+        </span>
+      </a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <!-- Brand + contact -->
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <div class="footer-brand-name">
+          <span class="footer-brand-symbol">&lt;</span>
+          <span>Amar</span>
+          <span class="footer-brand-symbol">/&gt;</span>
+        </div>
+        <p class="footer-brand-description">{{ f.tagline }}</p>
+        <div class="footer-status">
+          <span class="footer-status-dot"></span>
+          <span>{{ f.status }}</span>
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <h5>Contact</h5>
+
+        <a [href]="'mailto:' + email" class="footer-contact-item">
+          <span class="contact-icon"><img src="assets/icons/mail.webp" alt="" class="nav-icon"></span>
+          <span><small>Email</small><strong>{{ email }}</strong></span>
+        </a>
+
+        <a [href]="'tel:' + phoneLink" class="footer-contact-item">
+          <span class="contact-icon"><img src="assets/icons/phone.webp" alt="" class="nav-icon"></span>
+          <span><small>Phone</small><strong>{{ phone }}</strong></span>
+        </a>
+
+        <div class="footer-contact-item">
+          <span class="contact-icon"><img src="assets/icons/location.webp" alt="" class="nav-icon"></span>
+          <span><small>Location</small><strong>{{ location }}</strong></span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; {{ f.year }} <strong>Amar Davda</strong>. All rights reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
+}

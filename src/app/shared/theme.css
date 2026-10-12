@@ -1,0 +1,29 @@
+/* =========================================
+   SHARED THEME TOKENS
+   Included by every page + shared component
+   (same palette as home.css)
+========================================= */
+:host {
+    --bg: #07090d;
+    --bg-2: #0a0d12;
+    --card: #0d1219;
+    --border: #1b2633;
+    --border-light: #253446;
+    --white: #f8fafc;
+    --text: #d5dce6;
+    --muted: #7e8a9a;
+    --blue: #60a5fa;
+    --blue-light: #93c5fd;
+    --blue-dark: #3b82f6;
+    --blue-soft: rgba(59, 130, 246, 0.1);
+    --transition: 0.3s ease;
+    --nav-height: 70px;
+    display: block;
+    font-family: "Quicksand", sans-serif;
+}
+
+@media (max-width: 768px) {
+    :host {
+        --nav-height: 62px;
+    }
+}

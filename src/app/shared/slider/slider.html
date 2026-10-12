@@ -1,0 +1,41 @@
+<div class="slider" (pointerenter)="hoverStart($event)" (pointerleave)="hoverEnd($event)">
+
+  <!-- Previous -->
+  <button type="button" class="slider-control" *ngIf="state.maxIndex > 0" (click)="state.prev()"
+    [attr.aria-label]="'Previous ' + label">
+    <span>←</span>
+  </button>
+
+  <!-- Viewport -->
+  <div class="slider-viewport" (pointerdown)="swipeStart($event)" (pointerup)="swipeEnd($event)"
+    (pointercancel)="swipeCancel()">
+    <div class="slider-track" [style.transform]="state.transform">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  <!-- Next -->
+  <button type="button" class="slider-control" *ngIf="state.maxIndex > 0" (click)="state.next()"
+    [attr.aria-label]="'Next ' + label">
+    <span>→</span>
+  </button>
+
+</div>
+
+<!-- Progress + dots -->
+<div class="slider-bottom" *ngIf="state.maxIndex > 0">
+
+  <div class="slider-progress">
+    <span>{{ pad(state.active + 1) }}</span>
+    <div class="progress-line">
+      <div class="progress-fill" [style.width.%]="state.progress"></div>
+    </div>
+    <span>{{ pad(state.maxIndex + 1) }}</span>
+  </div>
+
+  <div class="slider-dots">
+    <button type="button" *ngFor="let step of state.steps" [class.active]="step === state.active"
+      (click)="state.go(step)" [attr.aria-label]="'Go to ' + label + ' ' + (step + 1)"></button>
+  </div>
+
+</div>
