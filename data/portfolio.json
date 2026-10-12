@@ -3,41 +3,42 @@
     "name": "Amar Davda",
     "title": "Software Engineering Student",
     "city": "Jasdan, Gujarat",
-    "shortSummery": "I’m a software developer who loves solving problems with logic and maths, and enjoys learning new technologies and passionate about music, mythology, and the beauty of nature.",
-    "profileImage": "assets/profile/profile.jpg",
-    "logo": "assets/logo/logo.png"
+    "profileImage": "assets/profile/amar_hero.png",
+    "logo": "assets/profile/amar_dp.png",
+    "shortSummary": "I'm a software developer who loves solving problems with logic and maths, and enjoys learning new technologies and passionate about music, mythology, and the beauty of nature."
   },
   "about": {
-    "profileImage2": "assets/profile/profile2.jpg",
+    "profileImage2": "assets/profile/amar_2.jpg",
     "professionalSummary": "I am a passionate IT engineering student with a strong interest in software development and technology. I enjoy learning new things, solving problems, and improving my technical skills. I am looking for opportunities where I can apply what I have learned, gain real-world experience, and grow as a developer. With a positive mindset and a commitment to continuous learning, I hope to contribute my ideas and efforts in a professional environment while building a strong career in the field of technology.",
     "resume": "assets/resume/myResume.pdf"
   },
   "about2": {
-    "aboutImage": "assets/profile/profile2.jpg",
+    "aboutImage": "assets/profile/amar_1.jpg",
     "summary": "I am someone who believes in constant growth, curiosity, and making life meaningful through learning and experience. I enjoy understanding how things work, asking questions, and finding better ways to solve problems, not just in studies, but in everyday life. For me, growth is not just about success, but about becoming a better thinker, a better creator, and a better human being with each step I take. I want to build a life where I can keep exploring new ideas, expressing creativity, and contributing something valuable to the world around me. I am driven by a positive mindset, a willingness to learn from every situation, and a desire to turn my efforts into something impactful. My goal is not only to achieve personal success, but also to create, inspire, and leave behind something meaningful through my journey.",
-    "whyWorkWithMe": "I am a self-motivated and positive individual who genuinely enjoys solving problems and continuously improving myself. I approach every task with dedication and a mindset to give my 100%, whether working independently or as part of a team. I learn new things quickly and adapt well to challenges, which helps me grow and stay consistent in my work. Along with this, I have good communication skills and enjoy guiding and collaborating with others, creating a supportive and productive environment. I believe in putting in honest effort and staying committed to my goals. With this mindset, I aim not only to grow personally but also to contribute meaningfully and add value to the organization I work with."
+    "whyWorkWithMe": "I am a self-motivated and positive individual who genuinely enjoys solving problems and continuously improving myself. I approach every task with dedication and a mindset to give my 100%, whether working independently or as part of a team. I learn new things quickly and adapt well to challenges, which helps me grow and stay consistent in my work. Along with this, I have good communication skills and enjoy guiding and collaborating with others, creating a supportive and productive environment. I believe in putting in honest effort and staying committed to my goals. With this mindset, I aim not only to grow personally but also to contribute meaningfully and add value to the organization I work with.",
+    "heading": "Let's build something worth shipping."
   },
   "education": [
     {
       "degree": "Bachelor of Technology in Information Technology (B.Tech IT)",
       "institution": "Marwadi University, Rajkot",
       "duration": "2022 - 2026",
-      "institutionLogo": "assets/education/mulogo.jpg",
-      "resultImage": "assets/education/mu.jpg"
+      "institutionLogo": "assets/education/logo/mu.jpg",
+      "resultImage": "assets/education/result/btech.jpg"
     },
     {
       "degree": "Higher Secondary Certification (12th)",
       "institution": "SOS: The School of Science, Eng. Med. School, Rajkot",
       "duration": "2020 - 2022",
-      "institutionLogo": "assets/education/soslogo.jpg",
-      "resultImage": "assets/education/hsc.jpg"
+      "institutionLogo": "assets/education/logo/sos.jpg",
+      "resultImage": "assets/education/result/hsc.jpg"
     },
     {
       "degree": "Secondary School Certification (10th)",
       "institution": "Saint Hari Eng. Med. School, Jasdan",
       "duration": "2007 - 2020",
-      "institutionLogo": "assets/education/stharilogo.jpg",
-      "resultImage": "assets/education/ssc.jpg"
+      "institutionLogo": "assets/education/logo/sthari.jpg",
+      "resultImage": "assets/education/result/ssc.jpg"
     }
   ],
   "certifications": [
@@ -73,18 +74,18 @@
       "items": [
         {
           "language": "Gujarati",
-          "Proficiency": "Native",
-          "logo": "assets/skills/guj.png"
+          "logo": "assets/skills/language/gujarati.png",
+          "proficiency": "Native"
         },
         {
           "language": "English",
-          "Proficiency": "Proficient",
-          "logo": "assets/skills/eng.jpg"
+          "logo": "assets/skills/language/english.jpg",
+          "proficiency": "Proficient"
         },
         {
           "language": "Hindi",
-          "Proficiency": "Proficient",
-          "logo": "assets/skills/hindi.png"
+          "logo": "assets/skills/language/hindi.png",
+          "proficiency": "Proficient"
         }
       ]
     },
@@ -94,88 +95,197 @@
       "items": [
         {
           "title": "Music",
-          "logo": "assets/skills/music.jpg"
+          "logo": "assets/skills/hobbies/music.jpg"
         },
         {
           "title": "Reading",
-          "logo": "assets/skills/read.jpg"
+          "logo": "assets/skills/hobbies/reading.jpg"
         },
         {
           "title": "Mathematics",
-          "logo": "assets/skills/maths.png"
+          "logo": "assets/skills/hobbies/maths.png"
         },
         {
           "title": "Sketching",
-          "logo": "assets/skills/sketch.jpg"
+          "logo": "assets/skills/hobbies/sketching.jpg"
         },
         {
           "title": "Fiction Writing",
-          "logo": "assets/skills/writing.jpg"
+          "logo": "assets/skills/hobbies/writing.jpg"
         },
         {
           "title": "Explore Mythologies",
-          "logo": "assets/skills/myth.jpg"
+          "logo": "assets/skills/hobbies/myths.jpg"
         },
         {
           "title": "Gardening",
-          "logo": "assets/skills/garden.png"
+          "logo": "assets/skills/hobbies/gardening.png"
         }
       ]
     }
   },
   "skills": {
-    "intro": "As a Technical Learner, I have dived into range of skills, from Core Programming to Running Technologies.",
+    "intro": "As a Technical Learner, I have dived into range of skills, from Core Programming to Modern Technologies.",
     "categories": [
       {
         "title": "Programming Language",
         "items": [
-          {"name": "C", "level": 75, "logo": "assets/skills/c.png"},
-          {"name": "C++", "level": 70, "logo": "assets/skills/cpp.png"},
-          {"name": "Java", "level": 80, "logo": "assets/skills/java.png"},
-          {"name": "Python", "level": 75, "logo": "assets/skills/python.png"},
-          {"name": "C Sharp", "level": 70, "logo": "assets/skills/cs.png"},
-          {"name": "PHP", "level": 75, "logo": "assets/skills/php.png"},
-          {"name": "SQL", "level": 80, "logo": "assets/skills/sql.png"}
-        ]
+          {
+            "name": "C",
+            "level": 75,
+            "logo": "assets/skills/c.png"
+          },
+          {
+            "name": "C++",
+            "level": 70,
+            "logo": "assets/skills/cpp.png"
+          },
+          {
+            "name": "Java",
+            "level": 80,
+            "logo": "assets/skills/java.png"
+          },
+          {
+            "name": "Python",
+            "level": 75,
+            "logo": "assets/skills/python.png"
+          },
+          {
+            "name": "C#",
+            "level": 70,
+            "logo": "assets/skills/cs.png"
+          },
+          {
+            "name": "PHP",
+            "level": 75,
+            "logo": "assets/skills/php.png"
+          },
+          {
+            "name": "SQL",
+            "level": 80,
+            "logo": "assets/skills/sql.png"
+          }
+        ],
+        "id": "language",
+        "tagline": "Core languages I think in"
       },
       {
         "title": "Web Development",
         "items": [
-          {"name": "HTML", "level": 90, "logo": "assets/skills/html.png"},
-          {"name": "CSS", "level": 85, "logo": "assets/skills/css.png"},
-          {"name": "JavaScript", "level": 75, "logo": "assets/skills/js.png"},
-          {"name": "React JS", "level": 90, "logo": "assets/skills/react.png"},
-          {"name": "Node JS", "level": 85, "logo": "assets/skills/node.png"},
-          {"name": "Express JS", "level": 75, "logo": "assets/skills/express.png"},
-          {"name": "Bootstrap", "level": 80, "logo": "assets/skills/boot.png"},
-          {"name": "Tailwind CSS", "level": 80, "logo": "assets/skills/tail.png"}
-        ]
+          {
+            "name": "HTML",
+            "level": 90,
+            "logo": "assets/skills/html.png"
+          },
+          {
+            "name": "CSS",
+            "level": 85,
+            "logo": "assets/skills/css.png"
+          },
+          {
+            "name": "JavaScript",
+            "level": 75,
+            "logo": "assets/skills/js.png"
+          },
+          {
+            "name": "React JS",
+            "level": 90,
+            "logo": "assets/skills/react.png"
+          },
+          {
+            "name": "Node JS",
+            "level": 85,
+            "logo": "assets/skills/node.png"
+          },
+          {
+            "name": "Express JS",
+            "level": 75,
+            "logo": "assets/skills/express.png"
+          },
+          {
+            "name": "Bootstrap",
+            "level": 80,
+            "logo": "assets/skills/boot.png"
+          },
+          {
+            "name": "Tailwind CSS",
+            "level": 80,
+            "logo": "assets/skills/tail.png"
+          }
+        ],
+        "id": "web",
+        "tagline": "Frontend and backend for the web"
       },
       {
         "title": "Database Programming",
         "items": [
-          {"name": "MySQL", "level": 80, "logo": "assets/skills/mysql.png"},
-          {"name": "MongoDB", "level": 80, "logo": "assets/skills/mongo.png"},
-          {"name": "PostgreSQL", "level": 70, "logo": "assets/skills/postgre.png"}
-        ]
+          {
+            "name": "MySQL",
+            "level": 80,
+            "logo": "assets/skills/mysql.png"
+          },
+          {
+            "name": "MongoDB",
+            "level": 80,
+            "logo": "assets/skills/mongo.png"
+          },
+          {
+            "name": "PostgreSQL",
+            "level": 70,
+            "logo": "assets/skills/postgre.png"
+          }
+        ],
+        "id": "database",
+        "tagline": "Where the data lives"
       },
       {
         "title": "Mobile App Development",
         "items": [
-          {"name": "Kotlin", "level": 75, "logo": "assets/skills/kotlin.png"},
-          {"name": "Dart", "level": 70, "logo": "assets/skills/dart.png"},
-          {"name": "Flutter", "level": 70, "logo": "assets/skills/flutter.png"}
-        ]
+          {
+            "name": "Kotlin",
+            "level": 75,
+            "logo": "assets/skills/kotlin.png"
+          },
+          {
+            "name": "Dart",
+            "level": 70,
+            "logo": "assets/skills/dart.png"
+          },
+          {
+            "name": "Flutter",
+            "level": 70,
+            "logo": "assets/skills/flutter.png"
+          }
+        ],
+        "id": "mobile",
+        "tagline": "Apps for Android and beyond"
       },
       {
         "title": "Soft Skills",
         "items": [
-          {"name": "Problem Solving", "logo": "assets/skills/problem2.png"},
-          {"name": "Teamwork", "logo": "assets/skills/team.png"},
-          {"name": "Communication", "logo": "assets/skills/communication.png"},
-          {"name": "Presentation", "logo": "assets/skills/presentation.png"},
-          {"name": "Time Management", "logo": "assets/skills/time.png"}
-        ]
+          {
+            "name": "Problem Solving",
+            "logo": "assets/skills/soft/problem.png"
+          },
+          {
+            "name": "Teamwork",
+            "logo": "assets/skills/soft/team.png"
+          },
+          {
+            "name": "Communication",
+            "logo": "assets/skills/soft/communication.png"
+          },
+          {
+            "name": "Presentation",
+            "logo": "assets/skills/soft/presentation.png"
+          },
+          {
+            "name": "Time Management",
+            "logo": "assets/skills/soft/time.png"
+          }
+        ],
+        "id": "soft",
+        "tagline": "The skills that make teams work"
       },
       {
         "title": "Other Tools",
@@ -186,7 +296,7 @@
             "logo": "assets/skills/vs.png"
           },
           {
-            "name": "AndroidStudio",
+            "name": "Android Studio",
             "level": 80,
             "logo": "assets/skills/as.png"
           },
@@ -210,7 +320,9 @@
             "level": 80,
             "logo": "assets/skills/chat.png"
           }
-        ]
+        ],
+        "id": "tools",
+        "tagline": "Tools I use every day"
       }
     ]
   },
@@ -237,7 +349,10 @@
       ],
       "duration": "In 5th-semester (Aug 2024 - Sept 2024)",
       "github": "",
-      "demo": ""
+      "demo": "",
+      "category": "Web App",
+      "image": "",
+      "pdf": ""
     },
     {
       "name": "E-CommerceApp - An Android Application",
@@ -249,7 +364,10 @@
       ],
       "duration": "In 6th-semester (Jan 2025 - Feb 2025)",
       "github": "",
-      "demo": ""
+      "demo": "",
+      "category": "Android App",
+      "image": "",
+      "pdf": ""
     },
     {
       "name": "Next-Gen. Smart Farming Platform for Proactive Crop Disease Management System",
@@ -259,13 +377,16 @@
         "ASP.NET Core Web API",
         "ONNX Runtime"
       ],
-      "duration": " In 7th-semester (June 2025 - Sept 2025) ",
+      "duration": "In 7th-semester (June 2025 - Sept 2025)",
       "github": "",
-      "demo": ""
+      "demo": "",
+      "category": "AI / Web API",
+      "image": "",
+      "pdf": ""
     },
     {
       "name": "AI-Powered Recruitment and Staffing Platform - An Android Application",
-      "description": "This application is an AI-driven recruitment and staffing platform designed for both job eekers and recruiters. It provides secure dual-role login, job recommendations, user can explore and search jobs, esume analysis with ATS scoring and suggest improvement, and NLP-based chatbot. Recruiters can post jobs, manage applications, and review candidates.",
+      "description": "This application is an AI-driven recruitment and staffing platform designed for both job seekers and recruiters. It provides secure dual-role login, job recommendations, user can explore and search jobs, resume analysis with ATS scoring and suggest improvement, and NLP-based chatbot. Recruiters can post jobs, manage applications, and review candidates.",
       "tech": [
         "Flutter",
         "Dart",
@@ -275,36 +396,70 @@
       ],
       "duration": "In 8th-semester (Oct 2025 - Feb 2026)",
       "github": "",
-      "demo": ""
+      "demo": "",
+      "category": "AI / Android App",
+      "image": "",
+      "pdf": ""
     }
   ],
   "contact": {
     "title": "Get In Touch",
-    "contactImg": "assets/profile/flower.png",
-    "para1": "Let's Create Eomething Extraordinary.",
+    "contactImg": "assets/profile/amar_dp.png",
+    "para1": "Let's Create Something Extraordinary.",
     "para2": "So Let's Work Together to Shape Future, and Transform the Ideas and Thoughts into Reality.",
     "para3": "Let's Innovate Together!",
     "item": [
       {
         "title": "Address",
         "content": "Yogi Industries, Nr. Post Office, Station Road, Jasdan - 360050, Dist. Rajkot, Gujarat, India",
-        "logo": "assets/logo/home.png"
+        "logo": "assets/icons/Dark/location.png",
+        "link": "https://maps.google.com/?q=Jasdan,Gujarat,India"
       },
       {
         "title": "Email",
         "content": "amardavda1715@gmail.com",
-        "logo": "assets/logo/email.png"
+        "logo": "assets/icons/Dark/email.png",
+        "link": "mailto:amardavda1715@gmail.com"
       },
       {
         "title": "Phone",
         "content": "+91 8200585066",
-        "logo": "assets/logo/phone.png"
+        "logo": "assets/icons/Dark/phone.png",
+        "link": "tel:+918200585066"
       },
       {
         "title": "Whatsapp",
         "content": "+91 8200585066",
-        "logo": "assets/logo/whatsapp.png"
+        "logo": "assets/icons/Dark/whatsapp.png",
+        "link": "https://wa.me/918200585066"
+      }
+    ],
+    "thanks": "Thank you for taking the time to visit my portfolio. Whether you have an opportunity, a question, or just want to say hello, I would be happy to hear from you.",
+    "resume": "assets/resume/myResume.pdf",
+    "socials": [
+      {
+        "name": "GitHub",
+        "logo": "assets/icons/Dark/github.png",
+        "link": ""
+      },
+      {
+        "name": "LinkedIn",
+        "logo": "assets/icons/Dark/linkedin.png",
+        "link": ""
+      },
+      {
+        "name": "Instagram",
+        "logo": "assets/icons/Dark/instagram.png",
+        "link": ""
       }
     ]
+  },
+  "footer": {
+    "tagline": "Software engineer focused on building clean, useful and modern digital experiences.",
+    "status": "Available for opportunities",
+    "ctaTitle": "Have an idea?",
+    "ctaAccent": "Let's build it.",
+    "ctaText": "Whether you have a project in mind, a question, or simply want to connect, feel free to reach out. I'm always open to interesting conversations and new opportunities.",
+    "year": 2026
   }
 }
