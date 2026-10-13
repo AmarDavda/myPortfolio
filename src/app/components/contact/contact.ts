@@ -19,16 +19,24 @@ export class Contact extends PageBase {
   readonly failed = this.service.failed;
 
   readonly navLinks: NavLink[] = [
-    { id: 'connect', label: 'Say Hello' },
+    { id: 'connect', label: 'Say Hii!' },
     { id: 'details', label: 'Details' },
-    { id: 'contact', label: 'Footer' },
+    // { id: 'contact', label: 'Contact' },
   ];
 
   /** Pre-filled "send email" link */
   readonly mailLink = computed(() => {
     const email = this.data()?.contact.item.find((i) => i.title === 'Email')?.content ?? '';
     const subject = encodeURIComponent('Hello Amar, I found your portfolio');
-    return `mailto:${email}?subject=${subject}`;
+    const body = encodeURIComponent(
+      `Hello Amar,
+
+I found your portfolio and would like to connect with you.
+
+Best regards,`
+    );
+
+    return `mailto:${email}?subject=${subject}&body=${body}`;
   });
 
   /** title of the detail that was just copied (shows "Copied ✓") */
