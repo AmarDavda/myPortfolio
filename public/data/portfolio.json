@@ -127,6 +127,28 @@
   "skills": {
     "intro": "As a Technical Learner, I have dived into range of skills, from Core Programming to Modern Technologies.",
     "categories": [
+       {
+        "title": "Backend",
+        "items": [
+          {
+            "name": "Dotnet",
+            "level": 75,
+            "logo": "assets/skills/c.png"
+          },
+          {
+            "name": "SQL Server",
+            "level": 70,
+            "logo": "assets/skills/cpp.png"
+          },
+          {
+            "name": "Dapper",
+            "level": 80,
+            "logo": "assets/skills/java.png"
+          }
+        ],
+        "id": "back",
+        "tagline": "logic works I do in.."
+      },
       {
         "title": "Programming Language",
         "items": [
@@ -164,6 +186,11 @@
             "name": "SQL",
             "level": 80,
             "logo": "assets/skills/sql.png"
+          },
+          {
+            "name": "ASP.Net",
+            "level": 50,
+            "logo": "assets/skills/php.png"
           }
         ],
         "id": "language",
@@ -454,11 +481,31 @@
       {
         "name": "LinkedIn",
         "logo": "assets/icons/Dark/linkedin.png",
-        "link": "linkedin.com/in/amar1419davda05  "
+        "link": "https://linkedin.com/in/amar1419davda05  "
       },
       {
         "name": "Instagram",
         "logo": "assets/icons/Dark/instagram.png",
+        "link": "https://instagram.com/"
+      },
+      {
+        "name": "Twitter",
+        "logo": "",
+        "link": ""
+      },
+      {
+        "name": "Reddit",
+        "logo": "",
+        "link": ""
+      },
+      {
+        "name": "Leetcode",
+        "logo": "",
+        "link": ""
+      },
+      {
+        "name": "YouTube",
+        "logo": "",
         "link": ""
       }
     ]
