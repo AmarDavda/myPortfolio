@@ -21,3 +21,9 @@ If `ng build` warns about component style size, raise "anyComponentStyle" budget
 - Project page: Experience section removed (lives on Home).
 - Sidebar bottom icons read their links from portfolio.json
   (Email, WhatsApp, Address work now; set contact.socials[GitHub|LinkedIn].link to show those two icons).
+
+## Round 3 fixes
+- Home: section refs now use read: ElementRef (the shared footer is a component, so it never got the 'visible' class and stayed hidden);
+  experience section has its old roomy layout back and fits at 480px; footer container fits its parent at every width.
+- Sidebar: social row keeps its height so Dev Status doesn't jump.
+- Skill cards: transparent themed cards, no background letters, glow + hover name/level slide.

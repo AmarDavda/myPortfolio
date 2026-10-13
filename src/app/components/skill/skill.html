@@ -41,7 +41,7 @@
   <div class="hover-grid">
     @for (s of c.items; track s.name) {
     <div class="hover-card logo" tabindex="0">
-      <span class="fallback dark">{{ s.name.charAt(0) }}</span>
+      <span class="logo-glow"></span>
       <img [src]="s.logo" [alt]="s.name" class="media" (error)="hideImage($event)">
       <div class="hover-overlay">
         <strong>{{ s.name }}</strong>

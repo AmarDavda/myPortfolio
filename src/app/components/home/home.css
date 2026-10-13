@@ -1439,9 +1439,22 @@
 ========================================= */
 .experience-section {
     position: relative;
-    background: var(--home-bg-secondary);
-    border-top: 1px solid var(--home-border);
+    min-height: 760px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background:
+        linear-gradient(180deg,
+            var(--home-bg-secondary) 0%,
+            var(--home-bg) 50%,
+            var(--home-bg-secondary) 100%);
     overflow: hidden;
+}
+
+.experience-section *,
+.experience-section *::before,
+.experience-section *::after {
+    box-sizing: border-box;
 }
 
 .experience-glow {
@@ -1472,8 +1485,8 @@
     z-index: 2;
     width: 100%;
     max-width: 1280px;
-    margin: auto;
-    padding: 100px 42px;
+    margin: 0 auto;
+    padding: 0 42px;
 }
 
 .experience-header {
@@ -1630,13 +1643,18 @@
 
 @media (max-width: 1050px) {
     .experience-container {
-        padding: 84px 28px;
+        padding: 0 32px;
     }
 }
 
 @media (max-width: 768px) {
+    .experience-section {
+        min-height: auto;
+        padding: 90px 0;
+    }
+
     .experience-container {
-        padding: 70px 22px;
+        padding: 0 22px;
     }
 
     .experience-header {
@@ -1645,8 +1663,20 @@
 }
 
 @media (max-width: 480px) {
+    .experience-section {
+        padding: 76px 0;
+    }
+
     .experience-container {
-        padding: 56px 16px;
+        padding: 0 17px;
+    }
+
+    .experience-title {
+        font-size: 32px;
+    }
+
+    .experience-intro {
+        font-size: 11px;
     }
 
     .timeline {

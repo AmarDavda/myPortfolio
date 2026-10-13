@@ -390,6 +390,7 @@
 .social-section {
   display: flex;
   gap: 8px;
+  min-height: 36px;
   margin-bottom: 11px;
 }
 

@@ -46,10 +46,6 @@
     user-select: none;
 }
 
-.fallback.dark {
-    color: #3b4a5e;
-}
-
 @media (max-width: 768px) {
     .stats {
         gap: 10px;

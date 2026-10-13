@@ -37,7 +37,7 @@ export class Home implements OnDestroy, AfterViewInit {
     this.isMobileNavOpen = false;
   }
 
-  @ViewChildren('scrollSection')
+  @ViewChildren('scrollSection', { read: ElementRef })
   sections!: QueryList<ElementRef>;
 
   private sectionObserver: IntersectionObserver | null = null;
