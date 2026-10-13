@@ -328,6 +328,15 @@
   },
   "experience": [
     {
+      "role": "Jr. Developer Intern",
+      "company": "Amar Infotech, Ahmedabad",
+      "duration": "June 2026 - Present",
+      "description": [
+        "I have learned the ASP.Net Core concepts.",
+        "I have created a web page using Angular, and used Swagger for API requesting. The web page was related to e commerce and social apps and maintaining the data and records."
+      ]
+    },
+    {
       "role": "Web Developer Intern",
       "company": "BrainyBeam technologies, Ahmedabad",
       "duration": "May 2025 - June 2025",
@@ -416,23 +425,23 @@
         "link": "https://maps.google.com/?q=Jasdan,Gujarat,India"
       },
       {
-        "title": "Email",
-        "content": "amardavda1715@gmail.com",
-        "logo": "assets/icons/Dark/email.png",
-        "link": "mailto:amardavda1715@gmail.com"
-      },
+    "title": "Email",
+    "content": "amardavda1715@gmail.com",
+    "logo": "assets/icons/Dark/email.png",
+    "link": "mailto:amardavda1715@gmail.com?subject=Hello%20Amar%2C%20I%20found%20your%20portfolio&body=Hello%20Amar%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards"
+  },
       {
         "title": "Phone",
         "content": "+91 8200585066",
         "logo": "assets/icons/Dark/phone.png",
         "link": "tel:+918200585066"
       },
-      {
-        "title": "Whatsapp",
-        "content": "+91 8200585066",
-        "logo": "assets/icons/Dark/whatsapp.png",
-        "link": "https://wa.me/918200585066"
-      }
+  {
+    "title": "Whatsapp",
+    "content": "+91 8200585066",
+    "logo": "assets/icons/Dark/whatsapp.png",
+    "link": "https://wa.me/918200585066?text=Hello%20Amar%2C%20I%20found%20your%20portfolio.%20I%20would%20like%20to%20connect%20with%20you."
+  }
     ],
     "thanks": "Thank you for taking the time to visit my portfolio. Whether you have an opportunity, a question, or just want to say hello, I would be happy to hear from you.",
     "resume": "assets/resume/myResume.pdf",
@@ -440,12 +449,12 @@
       {
         "name": "GitHub",
         "logo": "assets/icons/Dark/github.png",
-        "link": ""
+        "link": "https://github.com/AmarDavda"
       },
       {
         "name": "LinkedIn",
         "logo": "assets/icons/Dark/linkedin.png",
-        "link": ""
+        "link": "linkedin.com/in/amar1419davda05  "
       },
       {
         "name": "Instagram",
