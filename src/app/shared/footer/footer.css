@@ -505,3 +505,14 @@
         width: 300px;
     }
 }
+
+/* footer without the CTA: starts directly with brand + contact */
+.footer-container.no-cta {
+    padding-top: 64px;
+}
+
+@media (max-width: 768px) {
+    .footer-container.no-cta {
+        padding-top: 54px;
+    }
+}

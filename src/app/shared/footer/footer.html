@@ -2,8 +2,9 @@
 <footer class="portfolio-footer">
   <div class="footer-glow"></div>
 
-  <div class="footer-container">
+  <div class="footer-container" [class.no-cta]="!showCta">
 
+    @if (showCta) {
     <!-- CTA -->
     <div class="footer-cta">
       <div class="footer-cta-content">
@@ -27,6 +28,7 @@
     </div>
 
     <div class="footer-divider"></div>
+    }
 
     <!-- Brand + contact -->
     <div class="footer-main">

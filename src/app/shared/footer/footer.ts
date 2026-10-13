@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject } from '@angular/core';
+import { Component, Input, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../portfolio.service';
 
@@ -12,6 +12,9 @@ import { PortfolioService } from '../portfolio.service';
   styleUrls: ['../theme.css', './footer.css'],
 })
 export class Footer {
+  /** false = footer without the 'Have an idea?' call-to-action (used on the Contact page) */
+  @Input() showCta = true;
+
   private readonly service = inject(PortfolioService);
 
   readonly footer = computed(() => this.service.data()?.footer ?? null);

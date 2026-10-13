@@ -27,3 +27,8 @@ If `ng build` warns about component style size, raise "anyComponentStyle" budget
   experience section has its old roomy layout back and fits at 480px; footer container fits its parent at every width.
 - Sidebar: social row keeps its height so Dev Status doesn't jump.
 - Skill cards: transparent themed cards, no background letters, glow + hover name/level slide.
+
+## Round 4
+- Skill/About hover cards: on touch screens tap a card to show its name; skill level is a progress bar only (no number).
+- app.ts: every route change scrolls to the top of the new page.
+- Footer has [showCta]; Contact page uses the footer without the CTA.

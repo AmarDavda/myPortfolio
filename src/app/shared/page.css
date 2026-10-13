@@ -373,12 +373,6 @@ app-footer {
     text-align: center;
 }
 
-@media (hover: none) {
-    .hover-card.logo .hover-overlay {
-        padding-top: 16px;
-    }
-}
-
 .hover-overlay strong {
     color: var(--white);
     font-size: 13px;
@@ -393,9 +387,12 @@ app-footer {
 }
 
 .level-bar {
-    height: 3px;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.14);
+    width: 100%;
+    height: 6px;
+    margin-top: 2px;
+    border: 1px solid rgba(96, 165, 250, 0.22);
+    border-radius: 6px;
+    background: rgba(59, 130, 246, 0.1);
     overflow: hidden;
 }
 
@@ -404,6 +401,17 @@ app-footer {
     height: 100%;
     border-radius: inherit;
     background: linear-gradient(90deg, var(--blue-dark), var(--blue-light));
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.55);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+}
+
+/* the bar fills while the card is revealed */
+.hover-card:hover .level-bar span,
+.hover-card:focus .level-bar span,
+.hover-card:focus-visible .level-bar span {
+    transform: scaleX(1);
 }
 
 @media (hover: hover) {
@@ -425,9 +433,34 @@ app-footer {
     }
 }
 
+/* touch screens: tap a card to slide its name up, tap elsewhere to close */
+.hover-card {
+    -webkit-tap-highlight-color: transparent;
+}
+
 @media (hover: none) {
-    .hover-overlay {
+
+    .hover-card:focus {
+        outline: none;
+        transform: translateY(-3px);
+        border-color: rgba(96, 165, 250, 0.5);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.12);
+    }
+
+    .hover-card:focus .hover-overlay {
         transform: translateY(0);
+    }
+
+    .hover-card.logo:focus::before {
+        opacity: 1;
+    }
+
+    .hover-card.logo:focus img.media {
+        transform: translateY(-9%) scale(1.06);
+    }
+
+    .hover-card.logo:focus .logo-glow {
+        transform: translate(-50%, -62%) scale(1.1);
     }
 }
 

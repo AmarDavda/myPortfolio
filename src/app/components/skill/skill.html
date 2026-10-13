@@ -46,8 +46,10 @@
       <div class="hover-overlay">
         <strong>{{ s.name }}</strong>
         @if (s.level) {
-        <div class="level-bar"><span [style.width.%]="s.level"></span></div>
-        <small>{{ s.level }}%</small>
+        <div class="level-bar" role="progressbar" [attr.aria-label]="s.name + ' proficiency'"
+          [attr.aria-valuenow]="s.level" aria-valuemin="0" aria-valuemax="100">
+          <span [style.width.%]="s.level"></span>
+        </div>
         }
       </div>
     </div>

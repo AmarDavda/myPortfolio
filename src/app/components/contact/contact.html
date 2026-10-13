@@ -79,7 +79,7 @@
   }
 </section>
 
-<app-footer id="contact" class="reveal-section" #revealSection />
+<app-footer id="contact" class="reveal-section" #revealSection [showCta]="false" />
 
 } @else {
 <div class="page-state">{{ failed() ? 'Could not load data/portfolio.json' : 'Loading…' }}</div>
