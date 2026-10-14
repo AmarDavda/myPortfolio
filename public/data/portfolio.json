@@ -1,6 +1,6 @@
 {
   "hero": {
-    "name": "Amar B. Davda",
+    "name": "Amar Davda",
     "profileImage": "assets/profile/amar_hero.png",
     "logo": "assets/profile/amar_dp.png",
     "role": "Jr. Software Engineer",
@@ -453,8 +453,8 @@
       "tech": [ "ASP.NET Core Web API", "SQL Server", "EF Core", "Angular", "Bootstrap", "Clean Architecture"],
       "duration": "Aug 2026 - Sept 2026",
       "demo": "",
-      "category": "Web App",
-      "image": ""
+      "category": "ASP.Net",
+      "image": "assets/projects/contentread.png"
     },
     {
       "name": "E-Commerce App",
@@ -462,8 +462,8 @@
       "tech": [ "ASP.NET Core Web API", "SQL Server", "EF Core", "Angular", "JSON"],
       "duration": "June 2026 - Aug 2026",
       "demo": "",
-      "category": "Web App",
-      "image": ""
+      "category": "ASP.Net",
+      "image": "assets/projects/ecommerce.png"
     },
     {
       "name": "AI Chatbot Web App",
@@ -471,8 +471,8 @@
       "tech": ["Python", "FastAPI", "REST API", "Angular", "OpenAI API"],
       "duration": "July 2025 - Sept 2025",
       "demo": "",
-      "category": "AI Web App",
-      "image": ""
+      "category": "AI",
+      "image": "assets/projects/chatbot.png"
     },
     {
       "name": "Result History Web App",
@@ -485,8 +485,8 @@
       ],
       "duration": "Aug 2024 - Sept 2024",
       "demo": "",
-      "category": "Web App",
-      "image": ""
+      "category": "Node",
+      "image": "assets/projects/resulthist.png"
     }
   ],
   "contact": {
