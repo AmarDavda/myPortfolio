@@ -1,16 +1,47 @@
 {
   "hero": {
     "name": "Amar Davda",
-    "title": "Software Engineering Student",
+    "title": "Software Engineer",
     "city": "Jasdan, Gujarat",
     "profileImage": "assets/profile/amar_hero.png",
     "logo": "assets/profile/amar_dp.png",
-    "shortSummary": "I'm a software developer who loves solving problems with logic and maths, and enjoys learning new technologies and passionate about music, mythology, and the beauty of nature."
+    "shortSummary": "I'm a software developer who loves solving problems with logic and maths, and enjoys learning new technologies and passionate about music, mythology, and the beauty of nature.",
+    "role": "Software Engineer",
+    "base": "India",
+    "availability": "Available",
+    "greeting": "Hello, I'm",
+    "intro": "I build clean, responsive and user-focused applications with modern web technologies, turning ideas into practical digital experiences.",
+    "primaryButton": "View My Work",
+    "secondaryButton": "About Me",
+    "techLabel": "Currently working with",
+    "currentlyWorking": {
+      "project": "Angular Project",
+      "tech": [
+        "ASP.NET Core",
+        "Python",
+        "Angular",
+        "JavaScript"
+      ]
+    }
   },
   "about": {
     "profileImage2": "assets/profile/amar_2.jpg",
-    "professionalSummary": "I am a passionate IT engineering student with a strong interest in software development and technology. I enjoy learning new things, solving problems, and improving my technical skills. I am looking for opportunities where I can apply what I have learned, gain real-world experience, and grow as a developer. With a positive mindset and a commitment to continuous learning, I hope to contribute my ideas and efforts in a professional environment while building a strong career in the field of technology.",
-    "resume": "assets/resume/myResume.pdf"
+    "professionalSummary": "B.TECH IT graduate (CGPA 9.52) and Junior .NET Developer (Trainee) with hands-on experience in C#, ASP.NET Core, SQL Server and REST APIs, plus have front-end skills like Angular and ReactJS. Built web applications, including a Python FastAPI AI chatbot, and completed an industry internship. Strong in OOP, database design and clean, maintainable code. With a positive mindset and a commitment to continuous learning, I hope to contribute my ideas and efforts in a techie environment while building strong career in the field of technology.",
+    "resume": "assets/resume/myResume.pdf",
+    "label": "ABOUT ME",
+    "title": "Building things with",
+    "titleAccent": "purpose & passion.",
+    "homeImage": "assets/profile/amar_home_about.jpg",
+    "highlights": [
+      {
+        "title": "Problem Solver",
+        "text": "Turning ideas into solutions"
+      },
+      {
+        "title": "Continuous Learner",
+        "text": "Always exploring new technologies"
+      }
+    ]
   },
   "about2": {
     "aboutImage": "assets/profile/amar_1.jpg",
@@ -20,21 +51,21 @@
   },
   "education": [
     {
-      "degree": "Bachelor of Technology in Information Technology (B.Tech IT)",
+      "degree": "Bachelor of Technology in Information Technology",
       "institution": "Marwadi University, Rajkot",
       "duration": "2022 - 2026",
       "institutionLogo": "assets/education/logo/mu.jpg",
       "resultImage": "assets/education/result/btech.jpg"
     },
     {
-      "degree": "Higher Secondary Certification (12th)",
+      "degree": "Higher Secondary Certification",
       "institution": "SOS: The School of Science, Eng. Med. School, Rajkot",
       "duration": "2020 - 2022",
       "institutionLogo": "assets/education/logo/sos.jpg",
       "resultImage": "assets/education/result/hsc.jpg"
     },
     {
-      "degree": "Secondary School Certification (10th)",
+      "degree": "Secondary School Certification",
       "institution": "Saint Hari Eng. Med. School, Jasdan",
       "duration": "2007 - 2020",
       "institutionLogo": "assets/education/logo/sthari.jpg",
@@ -127,176 +158,258 @@
   "skills": {
     "intro": "As a Technical Learner, I have dived into range of skills, from Core Programming to Modern Technologies.",
     "categories": [
-       {
-        "title": "Backend",
-        "items": [
-          {
-            "name": "Dotnet",
-            "level": 75,
-            "logo": "assets/skills/c.png"
-          },
-          {
-            "name": "SQL Server",
-            "level": 70,
-            "logo": "assets/skills/cpp.png"
-          },
-          {
-            "name": "Dapper",
-            "level": 80,
-            "logo": "assets/skills/java.png"
-          }
-        ],
-        "id": "back",
-        "tagline": "logic works I do in.."
-      },
       {
-        "title": "Programming Language",
+        "title": "Frontend",
         "items": [
           {
-            "name": "C",
-            "level": 75,
-            "logo": "assets/skills/c.png"
+            "name": "HTML5",
+            "level": 95,
+            "logo": "assets/skills/frontend/html.png"
           },
           {
-            "name": "C++",
-            "level": 70,
-            "logo": "assets/skills/cpp.png"
-          },
-          {
-            "name": "Java",
-            "level": 80,
-            "logo": "assets/skills/java.png"
-          },
-          {
-            "name": "Python",
-            "level": 75,
-            "logo": "assets/skills/python.png"
-          },
-          {
-            "name": "C#",
-            "level": 70,
-            "logo": "assets/skills/cs.png"
-          },
-          {
-            "name": "PHP",
-            "level": 75,
-            "logo": "assets/skills/php.png"
-          },
-          {
-            "name": "SQL",
-            "level": 80,
-            "logo": "assets/skills/sql.png"
-          },
-          {
-            "name": "ASP.Net",
-            "level": 50,
-            "logo": "assets/skills/php.png"
-          }
-        ],
-        "id": "language",
-        "tagline": "Core languages I think in"
-      },
-      {
-        "title": "Web Development",
-        "items": [
-          {
-            "name": "HTML",
+            "name": "CSS3",
             "level": 90,
-            "logo": "assets/skills/html.png"
-          },
-          {
-            "name": "CSS",
-            "level": 85,
-            "logo": "assets/skills/css.png"
-          },
-          {
-            "name": "JavaScript",
-            "level": 75,
-            "logo": "assets/skills/js.png"
-          },
-          {
-            "name": "React JS",
-            "level": 90,
-            "logo": "assets/skills/react.png"
-          },
-          {
-            "name": "Node JS",
-            "level": 85,
-            "logo": "assets/skills/node.png"
-          },
-          {
-            "name": "Express JS",
-            "level": 75,
-            "logo": "assets/skills/express.png"
+            "logo": "assets/skills/frontend/css.png"
           },
           {
             "name": "Bootstrap",
-            "level": 80,
-            "logo": "assets/skills/boot.png"
+            "level": 90,
+            "logo": "assets/skills/frontend/bootstrap.png"
           },
           {
-            "name": "Tailwind CSS",
+            "name": "Javascript",
+            "level": 85,
+            "logo": "assets/skills/frontend/js.png"
+          },
+          {
+            "name": "JQuery",
             "level": 80,
-            "logo": "assets/skills/tail.png"
+            "logo": "assets/skills/frontend/jquery.png"
+          },
+          {
+            "name": "Angular",
+            "level": 90,
+            "logo": "assets/skills/frontend/angular.png"
+          },
+          {
+            "name": "ReactJS",
+            "level": 85,
+            "logo": "assets/skills/frontend/react.png"
+          },
+          {
+            "name": "Tailwind",
+            "level": 80,
+            "logo": "assets/skills/frontend/tailwind.png"
           }
         ],
-        "id": "web",
-        "tagline": "Frontend and backend for the web"
+        "id": "frontend",
+        "tagline": "Making Attractive, Interactive and Responsive UI and Frontend Logic with the help of this technologies."
       },
       {
-        "title": "Database Programming",
+        "title": "Backend",
+        "items": [
+          {
+            "name": "C Sharp",
+            "level": 85,
+            "logo": "assets/skills/backend/cs.png"
+          },
+          {
+            "name": "SQL",
+            "level": 90,
+            "logo": "assets/skills/backend/sql.png"
+          },
+          {
+            "name": "Node JS",
+            "level": 70,
+            "logo": "assets/skills/backend/node.png"
+          },
+          {
+            "name": "Express JS",
+            "level": 70,
+            "logo": "assets/skills/backend/express.png"
+          },
+          {
+            "name": "Mongoose",
+            "level": 75,
+            "logo": "assets/skills/backend/mongoose.png"
+          },
+          {
+            "name": ".Net Core MVC",
+            "level": 80,
+            "logo": "assets/skills/backend/dotnet.png"
+          },
+          {
+            "name": "ASP.Net Core Web API",
+            "level": 85,
+            "logo": "assets/skills/backend/aspnet.png"
+          },
+          {
+            "name": "EF Core",
+            "level": 80,
+            "logo": "assets/skills/backend/efcore.png"
+          },
+          {
+            "name": "Dapper",
+            "level": 75,
+            "logo": "assets/skills/backend/dapper.png"
+          },
+          {
+            "name": "LINQ",
+            "level": 90,
+            "logo": "assets/skills/backend/linq.png"
+          },
+          {
+            "name": "VB.Net",
+            "level": 60,
+            "logo": "assets/skills/backend/vb.png"
+          }
+        ],
+        "id": "backend",
+        "tagline": "Backend Logic builds here.."
+      },
+      {
+        "title": "Database",
         "items": [
           {
             "name": "MySQL",
-            "level": 80,
-            "logo": "assets/skills/mysql.png"
+            "level": 85,
+            "logo": "assets/skills/database/mysql.png"
           },
           {
             "name": "MongoDB",
-            "level": 80,
-            "logo": "assets/skills/mongo.png"
+            "level": 75,
+            "logo": "assets/skills/database/mongodb.png"
           },
           {
-            "name": "PostgreSQL",
-            "level": 70,
-            "logo": "assets/skills/postgre.png"
+            "name": "SQL Server",
+            "level": 90,
+            "logo": "assets/skills/database/sqlserver.png"
           }
         ],
         "id": "database",
         "tagline": "Where the data lives"
       },
       {
+        "title": "Tools",
+        "items": [
+          {
+            "name": "VS Code",
+            "level": 90,
+            "logo": "assets/skills/tool/vscode.png"
+          },
+          {
+            "name": "Visual Studio",
+            "level": 75,
+            "logo": "assets/skills/tool/visual.png"
+          },
+          {
+            "name": "SSMS",
+            "level": 90,
+            "logo": "assets/skills/tool/ssms.png"
+          },
+          {
+            "name": "Android Studio",
+            "level": 75,
+            "logo": "assets/skills/tool/android.png"
+          },
+          {
+            "name": "ChatGPT",
+            "level": 90,
+            "logo": "assets/skills/tool/chatgpt.png"
+          },
+          {
+            "name": "Claude",
+            "level": 90,
+            "logo": "assets/skills/tool/claude.png"
+          },
+          {
+            "name": "MS Tools",
+            "level": 80,
+            "logo": "assets/skills/tool/ms.png"
+          },
+          {
+            "name": "Git",
+            "level": 75,
+            "logo": "assets/skills/tool/git.png"
+          },
+          {
+            "name": "GitHub",
+            "level": 80,
+            "logo": "assets/skills/tool/github.png"
+          },
+          {
+            "name": "Swagger",
+            "level": 75,
+            "logo": "assets/skills/tool/swagger.png"
+          },
+          {
+            "name": "Postman API",
+            "level": 70,
+            "logo": "assets/skills/tool/postman.png"
+          }
+        ],
+        "id": "tool",
+        "tagline": "This is where, I work in.."
+      },
+      {
+        "title": "Programming Language",
+        "items": [
+          {
+            "name": "C",
+            "level": 80,
+            "logo": "assets/skills/programming/c.png"
+          },
+          {
+            "name": "C++",
+            "level": 80,
+            "logo": "assets/skills/programming/cpp.png"
+          },
+          {
+            "name": "Java",
+            "level": 80,
+            "logo": "assets/skills/programming/java.png"
+          },
+          {
+            "name": "Python",
+            "level": 80,
+            "logo": "assets/skills/programming/python.png"
+          }
+        ],
+        "id": "programming",
+        "tagline": "The other programming languages I know.."
+      },
+      {
         "title": "Mobile App Development",
         "items": [
           {
             "name": "Kotlin",
-            "level": 75,
-            "logo": "assets/skills/kotlin.png"
-          },
-          {
-            "name": "Dart",
             "level": 70,
-            "logo": "assets/skills/dart.png"
+            "logo": "assets/skills/mobile/kotlin.png"
           },
           {
             "name": "Flutter",
             "level": 70,
-            "logo": "assets/skills/flutter.png"
+            "logo": "assets/skills/mobile/flutter.png"
+          },
+          {
+            "name": "Dart",
+            "level": 72,
+            "logo": "assets/skills/programming/dart.png"
           }
         ],
         "id": "mobile",
-        "tagline": "Apps for Android and beyond"
+        "tagline": "Android Apps build by.."
       },
       {
         "title": "Soft Skills",
         "items": [
           {
             "name": "Problem Solving",
-            "logo": "assets/skills/soft/problem.png"
+            "logo": "assets/skills/soft/problemsoln.png"
           },
           {
             "name": "Teamwork",
-            "logo": "assets/skills/soft/team.png"
+            "logo": "assets/skills/soft/teamwork.png"
           },
           {
             "name": "Communication",
@@ -308,48 +421,11 @@
           },
           {
             "name": "Time Management",
-            "logo": "assets/skills/soft/time.png"
+            "logo": "assets/skills/soft/timemngmt.png"
           }
         ],
         "id": "soft",
-        "tagline": "The skills that make teams work"
-      },
-      {
-        "title": "Other Tools",
-        "items": [
-          {
-            "name": "VS Code",
-            "level": 85,
-            "logo": "assets/skills/vs.png"
-          },
-          {
-            "name": "Android Studio",
-            "level": 80,
-            "logo": "assets/skills/as.png"
-          },
-          {
-            "name": "Git",
-            "level": 70,
-            "logo": "assets/skills/git.png"
-          },
-          {
-            "name": "GitHub",
-            "level": 75,
-            "logo": "assets/skills/github.png"
-          },
-          {
-            "name": "MS Tools",
-            "level": 75,
-            "logo": "assets/skills/micro.jpg"
-          },
-          {
-            "name": "ChatGPT",
-            "level": 80,
-            "logo": "assets/skills/chat.png"
-          }
-        ],
-        "id": "tools",
-        "tagline": "Tools I use every day"
+        "tagline": "The skills that make represent my strength."
       }
     ]
   },
@@ -357,10 +433,11 @@
     {
       "role": "Jr. Developer Intern",
       "company": "Amar Infotech, Ahmedabad",
-      "duration": "June 2026 - Present",
+      "duration": "May 2026 - Present",
       "description": [
-        "I have learned the ASP.Net Core concepts.",
-        "I have created a web page using Angular, and used Swagger for API requesting. The web page was related to e commerce and social apps and maintaining the data and records."
+        "I work upon the ASP.Net Core and SQL Server.",
+        "I also work of creating web pages using Angular, and used Swagger for API requesting and checking.",
+        "The Projects are related to E-Commerce and Social Apps and maintaining the data and records."
       ]
     },
     {
@@ -384,11 +461,9 @@
         "CDNJS"
       ],
       "duration": "In 5th-semester (Aug 2024 - Sept 2024)",
-      "github": "",
       "demo": "",
       "category": "Web App",
-      "image": "",
-      "pdf": ""
+      "image": ""
     },
     {
       "name": "E-CommerceApp - An Android Application",
@@ -399,11 +474,9 @@
         "SQLite"
       ],
       "duration": "In 6th-semester (Jan 2025 - Feb 2025)",
-      "github": "",
       "demo": "",
       "category": "Android App",
-      "image": "",
-      "pdf": ""
+      "image": ""
     },
     {
       "name": "Next-Gen. Smart Farming Platform for Proactive Crop Disease Management System",
@@ -414,11 +487,9 @@
         "ONNX Runtime"
       ],
       "duration": "In 7th-semester (June 2025 - Sept 2025)",
-      "github": "",
       "demo": "",
       "category": "AI / Web API",
-      "image": "",
-      "pdf": ""
+      "image": ""
     },
     {
       "name": "AI-Powered Recruitment and Staffing Platform - An Android Application",
@@ -431,11 +502,9 @@
         "FastAPI"
       ],
       "duration": "In 8th-semester (Oct 2025 - Feb 2026)",
-      "github": "",
       "demo": "",
       "category": "AI / Android App",
-      "image": "",
-      "pdf": ""
+      "image": ""
     }
   ],
   "contact": {
@@ -447,28 +516,28 @@
     "item": [
       {
         "title": "Address",
-        "content": "Yogi Industries, Nr. Post Office, Station Road, Jasdan - 360050, Dist. Rajkot, Gujarat, India",
+        "content": "Yogi Industries, Nr. Post Office, Station Road, Jasdan [360050], Gujarat, India",
         "logo": "assets/icons/Dark/location.png",
-        "link": "https://maps.google.com/?q=Jasdan,Gujarat,India"
+        "link": "https://maps.google.com/?q=26R6+H56,GaliNumber13,KailashBaug,Vajsurpara,Jasdan,Gujarat360050"
       },
       {
-    "title": "Email",
-    "content": "amardavda1715@gmail.com",
-    "logo": "assets/icons/Dark/email.png",
-    "link": "mailto:amardavda1715@gmail.com?subject=Hello%20Amar%2C%20I%20found%20your%20portfolio&body=Hello%20Amar%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards"
-  },
+        "title": "Email",
+        "content": "amardavda1715@gmail.com",
+        "logo": "assets/icons/Dark/email.png",
+        "link": "mailto:amardavda1715@gmail.com?subject=Hello%20Amar%2C%20I%20found%20your%20portfolio&body=Hello%20Amar%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards"
+      },
       {
         "title": "Phone",
         "content": "+91 8200585066",
         "logo": "assets/icons/Dark/phone.png",
         "link": "tel:+918200585066"
       },
-  {
-    "title": "Whatsapp",
-    "content": "+91 8200585066",
-    "logo": "assets/icons/Dark/whatsapp.png",
-    "link": "https://wa.me/918200585066?text=Hello%20Amar%2C%20I%20found%20your%20portfolio.%20I%20would%20like%20to%20connect%20with%20you."
-  }
+      {
+        "title": "Whatsapp",
+        "content": "+91 8200585066",
+        "logo": "assets/icons/Dark/whatsapp.png",
+        "link": "https://wa.me/918200585066?text=Hello%20Amar%2C%20I%20found%20your%20portfolio.%20I%20would%20like%20to%20connect%20with%20you."
+      }
     ],
     "thanks": "Thank you for taking the time to visit my portfolio. Whether you have an opportunity, a question, or just want to say hello, I would be happy to hear from you.",
     "resume": "assets/resume/myResume.pdf",
@@ -489,6 +558,11 @@
         "link": "https://instagram.com/"
       },
       {
+        "name": "YouTube",
+        "logo": "",
+        "link": ""
+      },
+      {
         "name": "Twitter",
         "logo": "",
         "link": ""
@@ -502,11 +576,6 @@
         "name": "Leetcode",
         "logo": "",
         "link": ""
-      },
-      {
-        "name": "YouTube",
-        "logo": "",
-        "link": ""
       }
     ]
   },
@@ -517,5 +586,12 @@
     "ctaAccent": "Let's build it.",
     "ctaText": "Whether you have a project in mind, a question, or simply want to connect, feel free to reach out. I'm always open to interesting conversations and new opportunities.",
     "year": 2026
+  },
+  "experienceIntro": {
+    "label": "EXPERIENCE",
+    "title": "My journey through",
+    "accent": "code & experience.",
+    "text": "Hands-on experience that shaped my journey as a developer. For the things I have built, see the Projects page.",
+    "button": "View My Projects"
   }
 }
