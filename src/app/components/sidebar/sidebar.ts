@@ -2,6 +2,13 @@ import { Component, EventEmitter, HostListener, OnInit, Output, computed, inject
 import { PortfolioService } from '../../shared/portfolio.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
+export interface NavItem {
+  path: string;
+  label: string;
+  icon: string;
+  exact: boolean;
+}
+
 @Component({
   selector: 'app-sidebar',
   standalone: true,
@@ -13,8 +20,28 @@ export class Sidebar implements OnInit {
 
   isCollapsed = false;
 
-  // Social / contact links come from public/data/portfolio.json
+  // Everything (name, role, photo, resume, status, links) comes from public/data/portfolio.json
   private readonly data = inject(PortfolioService).data;
+
+  /** Sidebar menu: one entry per page / route */
+  readonly navItems: NavItem[] = [
+    { path: '/', label: 'Home', icon: 'assets/icons/home.webp', exact: true },
+    { path: '/about', label: 'About', icon: 'assets/icons/about.webp', exact: false },
+    { path: '/skill', label: 'Skill', icon: 'assets/icons/skill.png', exact: false },
+    { path: '/project', label: 'Project', icon: 'assets/icons/project.png', exact: false },
+    { path: '/contact', label: 'Contact', icon: 'assets/icons/contact.png', exact: false },
+  ];
+
+  /** Profile card: photo, name, role and resume */
+  readonly profile = computed(() => {
+    const d = this.data();
+    return {
+      photo: d?.hero.logo ?? '',
+      name: d?.hero.name ?? '',
+      role: d?.hero.role ?? '',
+      resume: d?.about.resume ?? '',
+    };
+  });
 
   /** Dev-status card: availability + "currently working on" */
   readonly status = computed(() => {
@@ -52,6 +79,11 @@ export class Sidebar implements OnInit {
 
   private isMobileViewport(): boolean {
     return typeof window !== 'undefined' && window.innerWidth <= 768;
+  }
+
+  /** Hides a broken <img> (same helper as the pages) */
+  hideImage(event: Event): void {
+    (event.target as HTMLImageElement).style.display = 'none';
   }
 
   toggleSidebar(): void {

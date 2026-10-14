@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BackToTop } from '../../shared/back-to-top/back-to-top';
 import { Footer } from '../../shared/footer/footer';
+import { Experience } from '../../shared/portfolio.model';
 import { PageBase } from '../../shared/page-base';
 import { NavLink, PageNavbar } from '../../shared/page-navbar/page-navbar';
 import { PortfolioService } from '../../shared/portfolio.service';
@@ -29,6 +30,29 @@ export class Home extends PageBase {
     { id: 'footer', label: 'Contact' },
   ];
 
+  
+  /* Experience list: with more than 3 entries only the first 2 show until "Show more" */
+  private readonly expLimit = 3;
+  private readonly expPreview = 2;
+  showAllExperience = false;
+
+  isLong(list: Experience[]): boolean {
+    return list.length > this.expLimit;
+  }
+
+  visibleExperience(list: Experience[]): Experience[] {
+    return this.isLong(list) && !this.showAllExperience ? list.slice(0, this.expPreview) : list;
+  }
+
+  toggleExperience(): void {
+    this.showAllExperience = !this.showAllExperience;
+    if (!this.showAllExperience) {
+      // collapsing: bring the section start back into view
+      document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  
   /** "Amar Davda" -> "Amar" */
   firstName(name: string): string {
     return name.trim().split(/\s+/)[0] ?? '';

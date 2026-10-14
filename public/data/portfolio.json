@@ -1,24 +1,20 @@
 {
   "hero": {
-    "name": "Amar Davda",
-    "title": "Software Engineer",
-    "city": "Jasdan, Gujarat",
+    "name": "Amar B. Davda",
     "profileImage": "assets/profile/amar_hero.png",
     "logo": "assets/profile/amar_dp.png",
-    "shortSummary": "I'm a software developer who loves solving problems with logic and maths, and enjoys learning new technologies and passionate about music, mythology, and the beauty of nature.",
-    "role": "Software Engineer",
+    "role": "Jr. Software Engineer",
     "base": "India",
     "availability": "Available",
     "greeting": "Hello, I'm",
-    "intro": "I build clean, responsive and user-focused applications with modern web technologies, turning ideas into practical digital experiences.",
+    "intro": "I build clean, responsive and user-focused applications with modern web technologies, turning ideas into practical digital experiences.I'm a software developer who loves solving problems with logic and maths, and enjoys learning new technologies and passionate about music, mythology, and the nature.",
     "primaryButton": "View My Work",
     "secondaryButton": "About Me",
     "techLabel": "Currently working with",
     "currentlyWorking": {
-      "project": "Angular Project",
+      "project": "ASP.Net Core Project",
       "tech": [
-        "ASP.NET Core",
-        "Python",
+        "ASP.NET",
         "Angular",
         "JavaScript"
       ]
@@ -452,58 +448,44 @@
   ],
   "projects": [
     {
-      "name": "Result History - A Web Application",
-      "description": "Developed a mini web-based result management system with a user-friendly landing page and input form. Students can enter their unique identifiers (such as Enrollment Number or GR Number) to instantly view their particular subject’s marks or results.",
-      "tech": [
-        "HTML",
-        "Javascript",
-        "Bootstrap",
-        "CDNJS"
-      ],
-      "duration": "In 5th-semester (Aug 2024 - Sept 2024)",
+      "name": "Content Reading App",
+      "description": "Developed a content-sharing and reading platform using ASP.NET Core Web API with Angular frontend. Implemented content creation, reading, updating, deletion, categorization, and search functionality. Designed the application so users can act as both authors and readers, allowing them to manage their own content and explore content published by others. Used Entity Framework Core for database operations and implemented Clean Architecture to maintain separation of concerns and improve maintainability.",
+      "tech": [ "ASP.NET Core Web API", "SQL Server", "EF Core", "Angular", "Bootstrap", "Clean Architecture"],
+      "duration": "Aug 2026 - Sept 2026",
       "demo": "",
       "category": "Web App",
       "image": ""
     },
     {
-      "name": "E-CommerceApp - An Android Application",
-      "description": "Developed an Android-based e-commerce application featuring multiple interactive screens, including a product listing home page and detailed product view. The app supports core shopping functionalities such as adding items to the cart, direct purchase, cart management, and a purchase history section to track previously bought products.",
-      "tech": [
-        "Kotlin",
-        "XML",
-        "SQLite"
-      ],
-      "duration": "In 6th-semester (Jan 2025 - Feb 2025)",
+      "name": "E-Commerce App",
+      "description": "Implemented product categories, search, filtering, pagination, shopping cart, and order management. Built CRUD functionality for admin/seller users to add, update, and delete products. Implemented order functionality allowing users to place, view, and search their orders. Used EF Core for efficient database operations and REST APIs for communication between the frontend and backend.",
+      "tech": [ "ASP.NET Core Web API", "SQL Server", "EF Core", "Angular", "JSON"],
+      "duration": "June 2026 - Aug 2026",
       "demo": "",
-      "category": "Android App",
+      "category": "Web App",
       "image": ""
     },
     {
-      "name": "Next-Gen. Smart Farming Platform for Proactive Crop Disease Management System",
-      "description": "Developed an AI-powered smart farming application using C# and ASP.NET Core that enables early detection of crop diseases through leaf image analysis. Integrated a machine learning model using ONNX Runtime to classify plant health and generate diagnostic reports. The system also provides treatment recommendations to help farmers take preventive actions.",
-      "tech": [
-        "C#",
-        "ASP.NET Core Web API",
-        "ONNX Runtime"
-      ],
-      "duration": "In 7th-semester (June 2025 - Sept 2025)",
+      "name": "AI Chatbot Web App",
+      "description": "Developed an AI-powered chatbot web application with FastAPI REST APIs and an Angular frontend for interactive and responsive chat and dashboard interfaces and conversation history management, allowing users to create, store, view, and delete chats. Integrated the OpenAI API to enable AI-powered conversations with a responsive, real-time chat experience. ",
+      "tech": ["Python", "FastAPI", "REST API", "Angular", "OpenAI API"],
+      "duration": "July 2025 - Sept 2025",
       "demo": "",
-      "category": "AI / Web API",
+      "category": "AI Web App",
       "image": ""
     },
     {
-      "name": "AI-Powered Recruitment and Staffing Platform - An Android Application",
-      "description": "This application is an AI-driven recruitment and staffing platform designed for both job seekers and recruiters. It provides secure dual-role login, job recommendations, user can explore and search jobs, resume analysis with ATS scoring and suggest improvement, and NLP-based chatbot. Recruiters can post jobs, manage applications, and review candidates.",
+      "name": "Result History Web App",
+      "description": "Developed a web-based student result portal for quickly accessing examination results. Implemented result searching using Enrollment Number / GR Number and subject-specific access mechanisms. Used for any recently uploaded result data from Excel-based sources for displaying student marks. Designed a responsive and simple interface using HTML, JavaScript, and Bootstrap for easy access on different devices. ",
       "tech": [
-        "Flutter",
-        "Dart",
-        "Python",
-        "Firebase",
-        "FastAPI"
+        "HTML",
+        "JavaScript",
+        "Bootstrap",
+        "CDNJS"
       ],
-      "duration": "In 8th-semester (Oct 2025 - Feb 2026)",
+      "duration": "Aug 2024 - Sept 2024",
       "demo": "",
-      "category": "AI / Android App",
+      "category": "Web App",
       "image": ""
     }
   ],

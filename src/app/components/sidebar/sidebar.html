@@ -7,16 +7,18 @@
   <div class="profile-section">
 
     <div class="profile-photo-wrapper">
-      <img src="assets/profile/amar_dp.png" alt="Amar Davda" class="profile-photo">
+      @if (profile().photo) {
+      <img [src]="profile().photo" [alt]="profile().name" class="profile-photo" (error)="hideImage($event)">
+      }
     </div>
 
     <div class="profile-info">
-      <h1>Amar Davda</h1>
-      <p>Software Engineer</p>
+      <h1>{{ profile().name }}</h1>
+      <p>{{ profile().role }}</p>
     </div>
 
     <!-- Resume -->
-    <a title="Download Resume" download href="assets/resume/myResume.pdf" class="resume-btn">
+    <a title="Download Resume" download [href]="profile().resume" class="resume-btn">
       <img src="assets/icons/download.png" alt="" class="nav-icon">
       <span class="nav-text">Get Resume</span>
     </a>
@@ -28,31 +30,13 @@
   <!-- ============================= -->
   <nav class="sidebar-nav">
 
-    <a title="Home" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item"
-      (click)="closeMobileSidebar()">
-      <img src="assets/icons/home.webp" alt="" class="nav-icon">
-      <span class="nav-text">Home</span>
+    @for (item of navItems; track item.path) {
+    <a [attr.title]="item.label" [routerLink]="item.path" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: item.exact }" class="nav-item" (click)="closeMobileSidebar()">
+      <img [src]="item.icon" alt="" class="nav-icon">
+      <span class="nav-text">{{ item.label }}</span>
     </a>
-
-    <a title="About" routerLink="/about" routerLinkActive="active" class="nav-item" (click)="closeMobileSidebar()">
-      <img src="assets/icons/about.webp" alt="" class="nav-icon">
-      <span class="nav-text">About</span>
-    </a>
-
-    <a title="Skill" routerLink="/skill" routerLinkActive="active" class="nav-item" (click)="closeMobileSidebar()">
-      <img src="assets/icons/skill.png" alt="" class="nav-icon">
-      <span class="nav-text">Skill</span>
-    </a>
-
-    <a title="Project" routerLink="/project" routerLinkActive="active" class="nav-item" (click)="closeMobileSidebar()">
-      <img src="assets/icons/project.png" alt="" class="nav-icon">
-      <span class="nav-text">Project</span>
-    </a>
-
-    <a title="Contact" routerLink="/contact" routerLinkActive="active" class="nav-item" (click)="closeMobileSidebar()">
-      <img src="assets/icons/contact.png" alt="" class="nav-icon">
-      <span class="nav-text">Contact</span>
-    </a>
+    }
 
   </nav>
 

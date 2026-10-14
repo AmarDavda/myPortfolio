@@ -1352,6 +1352,41 @@
     color: var(--home-blue);
 }
 
+
+
+.exp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.exp-card {
+    animation: expIn 0.5s ease both;
+}
+
+@keyframes expIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+}
+
+.exp-toggle {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.exp-toggle-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.exp-toggle-arrow.up {
+    transform: rotate(180deg);
+}
+
+
 .exp-more {
     display: inline-flex;
     align-items: center;
@@ -1429,8 +1464,12 @@
         font-size: 16px;
     }
 
-    .exp-more {
+    .exp-more,
+    .exp-actions {
         width: 100%;
+    }
+
+    .exp-more {
         justify-content: center;
     }
 }

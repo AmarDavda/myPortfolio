@@ -285,7 +285,7 @@
       </div>
 
       <div class="timeline">
-        @for (e of d.experience; track e.role) {
+        @for (e of visibleExperience(d.experience); track e.role + e.duration) {
         <article class="exp-card">
           <span class="exp-dot"></span>
           <span class="exp-date">{{ e.duration }}</span>
@@ -300,10 +300,19 @@
         }
       </div>
 
-      <a routerLink="/project" class="exp-more">
-        <span>{{ d.experienceIntro.button }}</span>
-        <img src="assets/icons/linkArrow.png" alt="" class="nav-icon">
-      </a>
+      <div class="exp-actions">
+        @if (isLong(d.experience)) {
+        <button type="button" class="exp-more exp-toggle" (click)="toggleExperience()"
+          [attr.aria-expanded]="showAllExperience">
+          <span>{{ showAllExperience ? 'Show less' : 'Show ' + (d.experience.length - 2) + ' more' }}</span>
+          <span class="exp-toggle-arrow" [class.up]="showAllExperience">&#8595;</span>
+        </button>
+        }
+        <a routerLink="/project" class="exp-more">
+          <span>{{ d.experienceIntro.button }}</span>
+          <img src="assets/icons/linkArrow.png" alt="" class="nav-icon">
+        </a>
+      </div>
 
     </div>
 
