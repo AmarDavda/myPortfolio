@@ -1,6 +1,16 @@
 /* Shape of public/data/portfolio.json */
-export interface Hero { name: string; title: string; city: string; shortSummary: string; profileImage: string; logo: string; }
-export interface About { profileImage2: string; professionalSummary: string; resume: string; }
+export interface Hero {
+  name: string; title: string; city: string; shortSummary: string; profileImage: string; logo: string;
+  role: string; base: string; availability: string; greeting: string; intro: string;
+  primaryButton: string; secondaryButton: string; techLabel: string;
+  currentlyWorking: { project: string; tech: string[] };
+}
+export interface About {
+  profileImage2: string; professionalSummary: string; resume: string;
+  label: string; title: string; titleAccent: string; homeImage: string;
+  highlights: { title: string; text: string }[];
+}
+export interface ExperienceIntro { label: string; title: string; accent: string; text: string; button: string; }
 export interface About2 { aboutImage: string; heading: string; summary: string; whyWorkWithMe: string; }
 export interface Education { degree: string; institution: string; duration: string; institutionLogo: string; resultImage: string; }
 export interface Certification { name: string; source: string; image: string; }
@@ -30,6 +40,6 @@ export interface FooterData {
 }
 export interface Portfolio {
   hero: Hero; about: About; about2: About2; education: Education[]; certifications: Certification[];
-  additionalInfo: AdditionalInfo; skills: Skills; experience: Experience[]; projects: Project[];
+  additionalInfo: AdditionalInfo; skills: Skills; experience: Experience[]; experienceIntro: ExperienceIntro; projects: Project[];
   contact: Contact; footer: FooterData;
 }

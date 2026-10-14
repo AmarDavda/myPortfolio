@@ -32,3 +32,12 @@ If `ng build` warns about component style size, raise "anyComponentStyle" budget
 - Skill/About hover cards: on touch screens tap a card to show its name; skill level is a progress bar only (no number).
 - app.ts: every route change scrolls to the top of the new page.
 - Footer has [showCta]; Contact page uses the footer without the CTA.
+
+## Round 5: Home built like the other pages
+- Home now extends PageBase and uses the shared navbar, footer, back-to-top (UI unchanged).
+- All Home text/images come from portfolio.json: hero.* (role, base, intro, buttons, currentlyWorking...),
+  about.* (title, professionalSummary, highlights, homeImage), experienceIntro.*, experience[].
+- "View My Work" / "About Me" buttons now smooth-scroll to their sections (plain #anchors went through the router).
+- Sidebar "Dev status" (availability, currently working on) reads hero.availability / hero.currentlyWorking.
+- Your edited Home about text is now about.professionalSummary in the JSON; your removed CV button stays removed.
+- Spec files get provideHttpClient/provideRouter so `ng test` still creates the components.

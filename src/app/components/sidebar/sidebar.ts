@@ -16,6 +16,16 @@ export class Sidebar implements OnInit {
   // Social / contact links come from public/data/portfolio.json
   private readonly data = inject(PortfolioService).data;
 
+  /** Dev-status card: availability + "currently working on" */
+  readonly status = computed(() => {
+    const hero = this.data()?.hero;
+    return {
+      availability: hero?.availability ?? 'Available',
+      project: hero?.currentlyWorking.project ?? '',
+      tech: hero?.currentlyWorking.tech ?? [],
+    };
+  });
+
   readonly links = computed(() => {
     const contact = this.data()?.contact;
     const item = (title: string) => contact?.item.find((i) => i.title === title)?.link ?? '';

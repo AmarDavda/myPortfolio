@@ -52,16 +52,7 @@
         </div>
 
         <div class="project-actions">
-          @if (p.github) {
-          <a [href]="p.github" target="_blank" rel="noopener" class="btn small">
-            <img src="assets/icons/Dark/github.png" alt="" class="icon"><span>Source</span>
-          </a>
-          } @else {
-          <span class="btn small disabled" title="Not available yet">
-            <img src="assets/icons/Dark/github.png" alt="" class="icon"><span>Source</span>
-          </span>
-          }
-
+          
           @if (p.demo) {
           <a [href]="p.demo" target="_blank" rel="noopener" class="btn small">
             <img src="assets/icons/Dark/link.png" alt="" class="icon"><span>Live</span>
@@ -69,16 +60,6 @@
           } @else {
           <span class="btn small disabled" title="Not available yet">
             <img src="assets/icons/Dark/link.png" alt="" class="icon"><span>Live</span>
-          </span>
-          }
-
-          @if (p.pdf) {
-          <a [href]="p.pdf" target="_blank" rel="noopener" class="btn small">
-            <img src="assets/icons/Dark/download.png" alt="" class="icon"><span>PDF</span>
-          </a>
-          } @else {
-          <span class="btn small disabled" title="Not available yet">
-            <img src="assets/icons/Dark/download.png" alt="" class="icon"><span>PDF</span>
           </span>
           }
         </div>

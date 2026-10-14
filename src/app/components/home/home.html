@@ -5,53 +5,13 @@
   <!-- =======================================
            HOME PAGE NAVBAR
       ======================================== -->
-  <nav class="home-navbar">
-    <div class="home-navbar-inner">
+  <app-page-navbar [links]="navLinks" [active]="activeSection" />
 
-      <!-- Page / brand indicator -->
-      <a href="#home" class="home-brand">
-        <span class="brand-symbol">&lt;/&gt;</span>
-        <span class="brand-text">Amar</span>
-      </a>
-
-      <!-- Section navigation -->
-      <div class="home-nav-links" id="home-nav-links" [class.mobile-open]="isMobileNavOpen">
-        <a href="#home" class="home-nav-link" [class.active]="activeSection === 'home'" (click)="closeMobileNav()">
-          <span>Home</span>
-        </a>
-        <a href="#about" class="home-nav-link" [class.active]="activeSection === 'about'" (click)="closeMobileNav()">
-          <span>About</span>
-        </a>
-        <a href="#experience" class="home-nav-link" [class.active]="activeSection === 'experience'"
-          (click)="closeMobileNav()">
-          <span>Experience</span>
-        </a>
-        <a href="#footer" class="home-nav-link" [class.active]="activeSection === 'footer'" (click)="closeMobileNav()">
-          <span>Contact</span>
-        </a>
-      </div>
-
-      <!-- Small status -->
-      <div class="navbar-status">
-        <span class="navbar-status-dot"></span>
-        <span>Available</span>
-      </div>
-
-      <!-- Hamburger toggle (small mobile only, shown via CSS) -->
-      <button type="button" class="nav-hamburger" [class.open]="isMobileNavOpen" (click)="toggleMobileNav()"
-        [attr.aria-expanded]="isMobileNavOpen" aria-controls="home-nav-links"
-        [attr.aria-label]="isMobileNavOpen ? 'Close menu' : 'Open menu'">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </div>
-  </nav>
+  @if (data(); as d) {
   <!-- =======================================
         HERO SECTION
    ======================================== -->
-  <section id="home" class="hero-section scroll-section" #scrollSection>
+  <section id="home" class="hero-section scroll-section" #revealSection>
     <!-- Background decorative elements -->
     <div class="hero-grid"></div>
     <div class="hero-glow hero-glow-one"></div>
@@ -66,13 +26,13 @@
         <div class="hero-greeting">
           <span class="greeting-line"></span>
           <span>
-            Hello, I'm
+            {{ d.hero.greeting }}
           </span>
         </div>
         <!-- Name -->
         <h1 class="hero-name">
-          Amar
-          <span>Davda</span>
+          {{ firstName(d.hero.name) }}
+          <span>{{ lastName(d.hero.name) }}</span>
         </h1>
         <!-- Position -->
         <div class="hero-position">
@@ -80,39 +40,36 @@
             &gt;_
           </span>
           <span>
-            Software Engineer
+            {{ d.hero.role }}
           </span>
         </div>
         <!-- Short introduction -->
         <p class="hero-description">
-          I build clean, responsive and user-focused
-          applications with modern web technologies,
-          turning ideas into practical digital experiences.
+          {{ d.hero.intro }}
         </p>
         <!-- Actions -->
         <div class="hero-actions">
-          <a href="#experience" class="hero-primary-btn">
+          <a href="#experience" class="hero-primary-btn" (click)="scrollToSection($event, 'experience')">
             <span>
-              View My Work
+              {{ d.hero.primaryButton }}
             </span>
             <span class="btn-arrow">
               <img src="assets/icons/rightArrow.png" alt="" class="nav-icon">
             </span>
           </a>
-          <a href="#about" class="hero-secondary-btn">
-            About Me
+          <a href="#about" class="hero-secondary-btn" (click)="scrollToSection($event, 'about')">
+            {{ d.hero.secondaryButton }}
           </a>
         </div>
         <!-- Small tech information -->
         <div class="hero-tech">
           <span class="tech-label">
-            Currently working with
+            {{ d.hero.techLabel }}
           </span>
           <div class="tech-list">
-            <span>ASP.NET Core</span>
-            <span>Python</span>
-            <span>Angular</span>
-            <span>JavaScript</span>
+            @for (t of d.hero.currentlyWorking.tech; track t) {
+            <span>{{ t }}</span>
+            }
           </div>
         </div>
       </div>
@@ -135,7 +92,7 @@
           </div>
           <!-- Profile image -->
           <div class="hero-image-wrapper">
-            <img src="assets/profile/amar_hero.png" alt="Amar Davda" class="hero-image">
+            <img [src]="d.hero.profileImage" [alt]="d.hero.name" class="hero-image" (error)="hideImage($event)">
           </div>
           <!-- Image bottom information -->
           <div class="image-caption">
@@ -144,7 +101,7 @@
                 ROLE
               </span>
               <span class="caption-value">
-                Software Engineer
+                {{ d.hero.role }}
               </span>
             </div>
             <div>
@@ -152,7 +109,7 @@
                 BASE
               </span>
               <span class="caption-value">
-                India
+                {{ d.hero.base }}
               </span>
             </div>
           </div>
@@ -164,7 +121,7 @@
           </span>
           <div>
             <span class="code-title">
-              Amar Davda
+              {{ d.hero.name }}
             </span>
           </div>
         </div>
@@ -175,7 +132,7 @@
      ABOUT SECTION
 ========================================= -->
 
-  <section id="about" class="about-section scroll-section" #scrollSection>
+  <section id="about" class="about-section scroll-section" #revealSection>
 
     <!-- Background glow -->
     <div class="about-glow"></div>
@@ -199,7 +156,7 @@
             <span class="about-image-line"></span>
 
             <span>
-              AMAR
+              {{ firstName(d.hero.name).toUpperCase() }}
             </span>
 
           </div>
@@ -209,7 +166,7 @@
 
           <div class="about-image-wrapper">
 
-            <img src="assets/profile/amar_home_about.jpg" alt="Amar Davda" class="about-image">
+            <img [src]="d.about.homeImage" [alt]="d.hero.name" class="about-image" (error)="hideImage($event)">
 
           </div>
 
@@ -219,7 +176,7 @@
           <div class="about-image-footer">
 
             <span class="footer-code">
-              &lt;Software Engineer /&gt;
+              &lt;{{ d.hero.role }} /&gt;
             </span>
 
             <span class="footer-dot"></span>
@@ -244,7 +201,7 @@
           <span class="label-line"></span>
 
           <span>
-            ABOUT ME
+            {{ d.about.label }}
           </span>
 
         </div>
@@ -254,8 +211,8 @@
 
         <h2 class="about-title">
 
-          Building things with
-          <span>purpose &amp; passion.</span>
+          {{ d.about.title }}
+          <span>{{ d.about.titleAccent }}</span>
 
         </h2>
 
@@ -264,94 +221,37 @@
 
         <div class="about-description">
 
-          <p>
-
-            I'm Amar Davda, a software engineer who enjoys
-            building modern, responsive and meaningful digital
-            experiences.
-
-          </p>
-
-
-          <p>
-
-            I like understanding how things work, solving
-            problems and turning ideas into clean and practical
-            applications. My focus is on writing maintainable
-            code while continuously learning and improving
-            my technical skills.
-
-          </p>
+          <p>{{ d.about.professionalSummary }}</p>
 
         </div>
-
 
         <!-- Small information -->
 
         <div class="about-highlights">
 
+          @for (h of d.about.highlights; track h.title; let i = $index) {
           <div class="about-highlight">
 
             <span class="highlight-number">
-              01
+              {{ pad(i + 1) }}
             </span>
 
             <div>
 
               <strong>
-                Problem Solver
+                {{ h.title }}
               </strong>
 
               <span>
-                Turning ideas into solutions
+                {{ h.text }}
               </span>
 
             </div>
 
           </div>
-
-
-          <div class="about-highlight">
-
-            <span class="highlight-number">
-              02
-            </span>
-
-            <div>
-
-              <strong>
-                Continuous Learner
-              </strong>
-
-              <span>
-                Always exploring new technologies
-              </span>
-
-            </div>
-
-          </div>
+          }
 
         </div>
-
-
-        <!-- CV Button -->
-
-        <!-- <div class="about-actions">
-
-          <a href="assets/resume/myResume.pdf" download class="cv-button">
-
-            <span>
-              Download CV
-            </span>
-
-            <span class="cv-icon">
-              <img src="assets/icons/download.png" alt="" class="nav-icon">
-            </span>
-
-          </a>
-
-        </div> -->
-
 
       </div>
 
@@ -363,7 +263,7 @@
      EXPERIENCE SECTION
 ========================================= -->
 
-  <section id="experience" class="experience-section scroll-section" #scrollSection>
+  <section id="experience" class="experience-section scroll-section" #revealSection>
 
     <div class="experience-glow experience-glow-one"></div>
     <div class="experience-glow experience-glow-two"></div>
@@ -373,21 +273,17 @@
       <div class="experience-header">
         <div class="experience-label">
           <span class="experience-label-line"></span>
-          <span>EXPERIENCE</span>
+          <span>{{ d.experienceIntro.label }}</span>
         </div>
 
         <h2 class="experience-title">
-          My journey through
-          <span>code &amp; experience.</span>
+          {{ d.experienceIntro.title }}
+          <span>{{ d.experienceIntro.accent }}</span>
         </h2>
 
-        <p class="experience-intro">
-          Hands-on experience that shaped my journey as a developer.
-          For the things I have built, see the Projects page.
-        </p>
+        <p class="experience-intro">{{ d.experienceIntro.text }}</p>
       </div>
 
-      @if (data(); as d) {
       <div class="timeline">
         @for (e of d.experience; track e.role) {
         <article class="exp-card">
@@ -403,10 +299,9 @@
         </article>
         }
       </div>
-      }
 
       <a routerLink="/project" class="exp-more">
-        <span>View My Projects</span>
+        <span>{{ d.experienceIntro.button }}</span>
         <img src="assets/icons/linkArrow.png" alt="" class="nav-icon">
       </a>
 
@@ -418,11 +313,13 @@
      FOOTER
 ========================================= -->
 
-  <app-footer id="footer" class="scroll-section" #scrollSection />
-  <!-- Back to top -->
+  <app-footer id="footer" class="scroll-section" #revealSection />
 
-  <button type="button" class="back-to-top" [class.show]="showBackToTop" (click)="scrollToTop()"
-    aria-label="Back to top">
-    <img src="assets/icons/up.png" alt="" class="nav-icon">
-  </button>
+  }  <!-- end @if data -->
+
+  @if (!data()) {
+  <div class="page-state">{{ failed() ? 'Could not load data/portfolio.json' : 'Loading…' }}</div>
+  }
+
+  <app-back-to-top />
 </div>

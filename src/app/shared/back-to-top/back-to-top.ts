@@ -7,7 +7,7 @@ import { Component, HostListener } from '@angular/core';
   standalone: true,
   template: `
     <button type="button" class="back-to-top" [class.show]="show" (click)="toTop()" aria-label="Back to top">
-      ↑
+      <img src="assets/icons/up.png" alt="" class="up-icon">
     </button>
   `,
   styles: [
@@ -40,6 +40,13 @@ import { Component, HostListener } from '@angular/core';
           border-color 0.3s ease,
           background 0.3s ease;
         z-index: 2000;
+      }
+
+      .up-icon {
+        width: 14px;
+        height: 14px;
+        object-fit: contain;
+        opacity: 0.75;
       }
 
       .back-to-top.show {

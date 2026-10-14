@@ -16,7 +16,7 @@
     </div>
 
     <!-- Resume -->
-    <a title="Download Resume" href="assets/resume/myResume.pdf" download class="resume-btn">
+    <a title="Download Resume" download href="assets/resume/myResume.pdf" class="resume-btn">
       <img src="assets/icons/download.png" alt="" class="nav-icon">
       <span class="nav-text">Get Resume</span>
     </a>
@@ -70,17 +70,16 @@
 
       <div class="status-header">
         <span class="status-dot"></span>
-        <span class="status-title nav-text">Available</span>
+        <span class="status-title nav-text">{{ status().availability }}</span>
       </div>
 
       <div class="status-content nav-text">
         <p class="status-label">Currently Working On</p>
-        <p class="project-name">Angular Project</p>
+        <p class="project-name">{{ status().project }}</p>
         <div class="tech-tags">
-          <span>ASP.NET Core</span>
-          <span>Python</span>
-          <span>Angular</span>
-          <span>Javascript</span>
+          @for (t of status().tech; track t) {
+          <span>{{ t }}</span>
+          }
         </div>
       </div>
 

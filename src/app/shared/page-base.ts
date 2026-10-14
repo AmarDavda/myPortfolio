@@ -80,6 +80,12 @@ export abstract class PageBase implements AfterViewInit, OnDestroy {
     });
   }
 
+  /** In-page link/button: smooth scroll to a section (plain href="#id" would go through the router). */
+  scrollToSection(event: Event, id: string): void {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   /** Hides a broken <img> so the fallback behind it shows instead. */
   hideImage(event: Event): void {
     (event.target as HTMLImageElement).style.display = 'none';
