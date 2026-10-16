@@ -466,7 +466,7 @@
       "image": "assets/projects/ecommerce.png"
     },
     {
-      "name": "AI Chatbot Web App",
+      "name": "AI Chatbot App",
       "description": "Developed an AI-powered chatbot web application with FastAPI REST APIs and an Angular frontend for interactive and responsive chat and dashboard interfaces and conversation history management, allowing users to create, store, view, and delete chats. Integrated the OpenAI API to enable AI-powered conversations with a responsive, real-time chat experience. ",
       "tech": ["Python", "FastAPI", "REST API", "Angular", "OpenAI API"],
       "duration": "July 2025 - Sept 2025",
@@ -475,19 +475,30 @@
       "image": "assets/projects/chatbot.png"
     },
     {
-      "name": "Result History Web App",
+      "name": "Result History App",
       "description": "Developed a web-based student result portal for quickly accessing examination results. Implemented result searching using Enrollment Number / GR Number and subject-specific access mechanisms. Used for any recently uploaded result data from Excel-based sources for displaying student marks. Designed a responsive and simple interface using HTML, JavaScript, and Bootstrap for easy access on different devices. ",
       "tech": [
-        "HTML",
-        "JavaScript",
-        "Bootstrap",
-        "CDNJS"
+        "HTML", "JavaScript", "Bootstrap", "CDNJS"
       ],
       "duration": "Aug 2024 - Sept 2024",
       "demo": "",
       "category": "Node",
       "image": "assets/projects/resulthist.png"
-    }
+    },
+   {
+    "name": "Employee Management App",
+    "description": "An employee management portal that allows administrators to manage employee records, including designations, departments, positions, and salaries. Admins can view, filter, add, update, and delete employee information. Employees can also access the portal to view and update their own personal details, ensuring efficient and organized workforce management.",
+    "tech": [".NET Core MVC", "CSHTML", "JavaScript", "CSS"],
+    "demo": "",
+    "category": "ASP.Net Core MVC"
+  },
+  {
+    "name": "Vedic App",
+    "description": "A knowledge platform dedicated to exploring Vedic cosmology, ancient descriptions of space and time, and the universe as described in Vedic and Puranic texts. The application presents genealogical information through interactive family trees, documenting dynasties, lineages, that origins from Brahma and other beings according to traditional scriptures. It aims to make ancient Indian knowledge accessible through a structured and user-friendly interface.",
+    "tech": ["Angular"],
+    "demo": "",
+    "category": "Angular"
+  }
   ],
   "contact": {
     "title": "Get In Touch",
