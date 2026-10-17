@@ -482,22 +482,26 @@
       ],
       "duration": "Aug 2024 - Sept 2024",
       "demo": "",
-      "category": "Node",
+      "category": "NodeJS",
       "image": "assets/projects/resulthist.png"
     },
    {
     "name": "Employee Management App",
     "description": "An employee management portal that allows administrators to manage employee records, including designations, departments, positions, and salaries. Admins can view, filter, add, update, and delete employee information. Employees can also access the portal to view and update their own personal details, ensuring efficient and organized workforce management.",
     "tech": [".NET Core MVC", "CSHTML", "JavaScript", "CSS"],
+      "duration": "July 2026 - Aug 2026",
     "demo": "",
-    "category": "ASP.Net Core MVC"
+    "category": ".Net Core MVC",
+      "image": "assets/projects/employeemgmt.png"
   },
   {
     "name": "Vedic App",
     "description": "A knowledge platform dedicated to exploring Vedic cosmology, ancient descriptions of space and time, and the universe as described in Vedic and Puranic texts. The application presents genealogical information through interactive family trees, documenting dynasties, lineages, that origins from Brahma and other beings according to traditional scriptures. It aims to make ancient Indian knowledge accessible through a structured and user-friendly interface.",
     "tech": ["Angular"],
+      "duration": "Nov 2023 - Dec 2023",
     "demo": "",
-    "category": "Angular"
+    "category": "Angular",
+      "image": "assets/projects/vedic.png"
   }
   ],
   "contact": {
