@@ -499,7 +499,7 @@
     "description": "A knowledge platform dedicated to exploring Vedic cosmology, ancient descriptions of space and time, and the universe as described in Vedic and Puranic texts. The application presents genealogical information through interactive family trees, documenting dynasties, lineages, that origins from Brahma and other beings according to traditional scriptures. It aims to make ancient Indian knowledge accessible through a structured and user-friendly interface.",
     "tech": ["Angular"],
       "duration": "Nov 2023 - Dec 2023",
-    "demo": "",
+    "demo": "https://amardavda.github.io/vedicApp/",
     "category": "Angular",
       "image": "assets/projects/vedic.png"
   }
